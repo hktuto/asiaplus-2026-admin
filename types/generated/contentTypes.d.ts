@@ -861,7 +861,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'manyToOne',
       'api::category.category'
     >;
-    slug: Attribute.UID<'api::event.event', 'title_EN'>;
+    slug: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -978,10 +978,10 @@ export interface ApiPagePage extends Schema.CollectionType {
     title_HK: Attribute.String;
     content_EN: Attribute.RichText;
     content_HK: Attribute.RichText;
-    slug: Attribute.UID;
     feature: Attribute.Media;
     title_CN: Attribute.String;
     content_CN: Attribute.RichText;
+    slug: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

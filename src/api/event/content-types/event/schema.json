@@ -81,8 +81,8 @@
       "inversedBy": "events"
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title_EN"
+      "type": "string",
+      "unique": true
     }
   }
 }

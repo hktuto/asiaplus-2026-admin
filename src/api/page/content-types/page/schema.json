@@ -24,9 +24,6 @@
     "content_HK": {
       "type": "richtext"
     },
-    "slug": {
-      "type": "uid"
-    },
     "feature": {
       "type": "media",
       "multiple": false,
@@ -43,6 +40,10 @@
     },
     "content_CN": {
       "type": "richtext"
+    },
+    "slug": {
+      "type": "string",
+      "unique": true
     }
   }
 }
