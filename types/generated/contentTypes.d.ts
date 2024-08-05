@@ -809,6 +809,7 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       'oneToMany',
       'api::event.event'
     >;
+    name_CN: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
