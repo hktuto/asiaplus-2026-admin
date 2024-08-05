@@ -1,0 +1,95 @@
+{
+  "collectionName": "components_programs_programs",
+  "info": {
+    "displayName": "program",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "startDate": {
+      "type": "date"
+    },
+    "endDate": {
+      "type": "date"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    },
+    "location_EN": {
+      "type": "text"
+    },
+    "location_HK": {
+      "type": "text"
+    },
+    "register_EN": {
+      "type": "text"
+    },
+    "register_HK": {
+      "type": "text"
+    },
+    "period_EN": {
+      "type": "text"
+    },
+    "period_HK": {
+      "type": "text"
+    },
+    "liveURL": {
+      "type": "string"
+    },
+    "videoURL": {
+      "type": "string"
+    },
+    "displayTime_EN": {
+      "type": "string"
+    },
+    "displayTime_HK": {
+      "type": "string"
+    },
+    "target_EN": {
+      "type": "text"
+    },
+    "target_HK": {
+      "type": "text"
+    },
+    "quota_EN": {
+      "type": "text"
+    },
+    "quota_HK": {
+      "type": "text"
+    },
+    "name_EN": {
+      "type": "text"
+    },
+    "name_HK": {
+      "type": "string"
+    },
+    "district": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::district.district"
+    },
+    "categories": {
+      "type": "customField",
+      "options": [
+        "World_Book_Day_Creative_Competition",
+        "Chinese_Culture_Workshop",
+        "Chinese_Culture_Activities",
+        "Interactive Storytelling Device",
+        "Traditional Performing Art",
+        "Hong_Kong_Inter-School_Chinese_Reading_Final_Contest_cum_Award_Ceremony",
+        "Read Together for Half an Hour",
+        "Other Activities",
+        "Handicraft Workshops",
+        "Story Sharing Sessions",
+        "Online_Reading_Club",
+        "HKRW_Fun_Day",
+        "HKRW_kick-off_ceremony_and_Carnival"
+      ],
+      "customField": "plugin::multi-select.multi-select"
+    }
+  }
+}

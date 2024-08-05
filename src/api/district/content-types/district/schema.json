@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "districts",
+  "info": {
+    "singularName": "district",
+    "pluralName": "districts",
+    "displayName": "district",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label_EN": {
+      "type": "string"
+    },
+    "label_HK": {
+      "type": "string"
+    },
+    "main_district": {
+      "type": "enumeration",
+      "enum": [
+        "hong_kong_island",
+        "kowloon",
+        "NT"
+      ],
+      "required": true
+    }
+  }
+}

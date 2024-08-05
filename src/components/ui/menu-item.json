@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_ui_menu_items",
+  "info": {
+    "displayName": "menu_item",
+    "icon": "bulletList",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "label_EN": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "default": "#"
+    },
+    "blank": {
+      "type": "boolean",
+      "default": false
+    },
+    "show": {
+      "type": "boolean",
+      "default": true
+    },
+    "label_HK": {
+      "type": "string"
+    },
+    "subMenu": {
+      "displayName": "subMenu",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.sub-menu"
+    }
+  }
+}

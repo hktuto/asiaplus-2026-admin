@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_ui_slides",
+  "info": {
+    "displayName": "Slide",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url_EN": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "title_EN": {
+      "type": "text"
+    },
+    "title_HK": {
+      "type": "string"
+    },
+    "url_HK": {
+      "type": "string"
+    },
+    "url_ZH": {
+      "type": "string"
+    },
+    "thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

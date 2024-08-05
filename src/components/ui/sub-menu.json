@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ui_sub_menus",
+  "info": {
+    "displayName": "subMenu",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "label_EN": {
+      "type": "string"
+    },
+    "label_HK": {
+      "type": "string"
+    },
+    "blank": {
+      "type": "boolean"
+    },
+    "show": {
+      "type": "boolean"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

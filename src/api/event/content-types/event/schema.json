@@ -1,0 +1,85 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_EN": {
+      "type": "text"
+    },
+    "title_HK": {
+      "type": "text"
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "content_EN": {
+      "type": "richtext"
+    },
+    "content_HK": {
+      "type": "richtext"
+    },
+    "host_EN": {
+      "type": "text"
+    },
+    "host_HK": {
+      "type": "text"
+    },
+    "target_EN": {
+      "type": "text"
+    },
+    "target_HK": {
+      "type": "text"
+    },
+    "quota_EN": {
+      "type": "text"
+    },
+    "quota_HK": {
+      "type": "text"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "events"
+    },
+    "remark_EN": {
+      "type": "text"
+    },
+    "remark_HK": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "videoURL": {
+      "type": "string"
+    },
+    "slides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.slide"
+    },
+    "programs": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programs.program"
+    }
+  }
+}
