@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_programs_information",
+  "info": {
+    "displayName": "information"
+  },
+  "options": {},
+  "attributes": {
+    "date_HK": {
+      "type": "string"
+    },
+    "date_EN": {
+      "type": "string"
+    },
+    "date_CN": {
+      "type": "string"
+    },
+    "location_HK": {
+      "type": "richtext"
+    },
+    "location_EN": {
+      "type": "richtext"
+    },
+    "location_CN": {
+      "type": "richtext"
+    },
+    "ticket_HK": {
+      "type": "richtext"
+    },
+    "ticket_EN": {
+      "type": "richtext"
+    },
+    "ticket_CN": {
+      "type": "richtext"
+    },
+    "language_HK": {
+      "type": "string"
+    },
+    "language_EN": {
+      "type": "string"
+    },
+    "language_CN": {
+      "type": "string"
+    },
+    "meet_session_HK": {
+      "type": "string"
+    },
+    "meet_session_EN": {
+      "type": "string"
+    },
+    "meet_session_CN": {
+      "type": "string"
+    }
+  }
+}

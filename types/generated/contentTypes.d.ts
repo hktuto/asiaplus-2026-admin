@@ -804,20 +804,11 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     name_EN: Attribute.String;
     name: Attribute.UID;
     order: Attribute.Integer;
-    externalURL: Attribute.String;
-    feature: Attribute.Media;
-    showInHome: Attribute.Boolean & Attribute.DefaultTo<false>;
-    color: Attribute.String &
-      Attribute.CustomField<'plugin::color-picker.color'>;
-    showFeatureImage: Attribute.Boolean & Attribute.DefaultTo<false>;
     events: Attribute.Relation<
       'api::category.category',
-      'manyToMany',
+      'oneToMany',
       'api::event.event'
     >;
-    show_programs: Attribute.Boolean & Attribute.DefaultTo<false>;
-    remark_EN: Attribute.Text;
-    remark_HK: Attribute.Text;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -829,42 +820,6 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::category.category',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDistrictDistrict extends Schema.CollectionType {
-  collectionName: 'districts';
-  info: {
-    singularName: 'district';
-    pluralName: 'districts';
-    displayName: 'district';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    label_EN: Attribute.String;
-    label_HK: Attribute.String;
-    main_district: Attribute.Enumeration<
-      ['hong_kong_island', 'kowloon', 'NT']
-    > &
-      Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::district.district',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::district.district',
       'oneToOne',
       'admin::user'
     > &
@@ -884,28 +839,28 @@ export interface ApiEventEvent extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title_EN: Attribute.Text;
-    title_HK: Attribute.Text;
-    photos: Attribute.Media;
-    content_EN: Attribute.RichText;
-    content_HK: Attribute.RichText;
-    host_EN: Attribute.Text;
-    host_HK: Attribute.Text;
-    target_EN: Attribute.Text;
-    target_HK: Attribute.Text;
-    quota_EN: Attribute.Text;
-    quota_HK: Attribute.Text;
-    categories: Attribute.Relation<
+    title_HK: Attribute.String;
+    title_EN: Attribute.String;
+    title_CN: Attribute.String;
+    information_HK: Attribute.RichText;
+    subTitle_HK: Attribute.String;
+    artist_HK: Attribute.RichText;
+    artist_EN: Attribute.RichText;
+    artist_CN: Attribute.RichText;
+    brochure_pdf: Attribute.Media;
+    brochure_cover: Attribute.Media;
+    program: Attribute.Component<'programs.program', true>;
+    infomation: Attribute.Component<'programs.information'>;
+    information_EN: Attribute.RichText;
+    information_CN: Attribute.RichText;
+    subTitle_EN: Attribute.String;
+    subTitle_CN: Attribute.String;
+    category: Attribute.Relation<
       'api::event.event',
-      'manyToMany',
+      'manyToOne',
       'api::category.category'
     >;
-    remark_EN: Attribute.Text;
-    remark_HK: Attribute.Text;
-    order: Attribute.Integer;
-    videoURL: Attribute.String;
-    slides: Attribute.Component<'ui.slide', true>;
-    programs: Attribute.Component<'programs.program', true>;
+    slug: Attribute.UID<'api::event.event', 'title_EN'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -929,14 +884,19 @@ export interface ApiFooterFooter extends Schema.SingleType {
   info: {
     singularName: 'footer';
     pluralName: 'footers';
-    displayName: 'footer';
+    displayName: 'Footer';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    footer_EN: Attribute.Text;
-    footer_HK: Attribute.String;
+    footer_logos: Attribute.Media;
+    copyright_HK: Attribute.Text;
+    copyright_EN: Attribute.Text;
+    copyright_CN: Attribute.Text;
+    footer_main_menu: Attribute.Component<'ui.menu-item', true>;
+    footer_sub_menu: Attribute.Component<'ui.menu-item', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -960,14 +920,13 @@ export interface ApiHomeHome extends Schema.SingleType {
   info: {
     singularName: 'home';
     pluralName: 'homes';
-    displayName: 'home';
+    displayName: 'Home';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    seo_title: Attribute.String;
     Slider: Attribute.Component<'ui.slide', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -984,14 +943,13 @@ export interface ApiMenuMenu extends Schema.SingleType {
   info: {
     singularName: 'menu';
     pluralName: 'menus';
-    displayName: 'menu';
+    displayName: 'Main Menu';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    logo: Attribute.Media;
     item: Attribute.Component<'ui.menu-item', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -1009,6 +967,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     singularName: 'page';
     pluralName: 'pages';
     displayName: 'page';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1020,12 +979,44 @@ export interface ApiPagePage extends Schema.CollectionType {
     content_HK: Attribute.RichText;
     slug: Attribute.UID;
     feature: Attribute.Media;
+    title_CN: Attribute.String;
+    content_CN: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::page.page', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSocialMediaSocialMedia extends Schema.SingleType {
+  collectionName: 'social_medias';
+  info: {
+    singularName: 'social-media';
+    pluralName: 'social-medias';
+    displayName: 'Social Media';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    link: Attribute.Component<'ui.social', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::social-media.social-media',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::social-media.social-media',
+      'oneToOne',
+      'admin::user'
+    > &
       Attribute.Private;
   };
 }
@@ -1049,12 +1040,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
-      'api::district.district': ApiDistrictDistrict;
       'api::event.event': ApiEventEvent;
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
       'api::menu.menu': ApiMenuMenu;
       'api::page.page': ApiPagePage;
+      'api::social-media.social-media': ApiSocialMediaSocialMedia;
     }
   }
 }

@@ -30,6 +30,13 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.sub-menu"
+    },
+    "label_CN": {
+      "type": "string"
+    },
+    "show_in_desktop": {
+      "type": "boolean",
+      "default": true
     }
   }
 }

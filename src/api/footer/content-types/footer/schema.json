@@ -4,18 +4,40 @@
   "info": {
     "singularName": "footer",
     "pluralName": "footers",
-    "displayName": "footer"
+    "displayName": "Footer",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "footer_EN": {
+    "footer_logos": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "copyright_HK": {
       "type": "text"
     },
-    "footer_HK": {
-      "type": "string"
+    "copyright_EN": {
+      "type": "text"
+    },
+    "copyright_CN": {
+      "type": "text"
+    },
+    "footer_main_menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.menu-item"
+    },
+    "footer_sub_menu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.menu-item"
     }
   }
 }

@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "url_EN": {
+    "video_EN": {
       "type": "string"
     },
     "image": {
@@ -21,7 +21,7 @@
         "audios"
       ]
     },
-    "title": {
+    "title_CN": {
       "type": "string"
     },
     "title_EN": {
@@ -30,21 +30,31 @@
     "title_HK": {
       "type": "string"
     },
-    "url_HK": {
+    "video_HK": {
       "type": "string"
     },
-    "url_ZH": {
+    "video_ZH": {
       "type": "string"
     },
     "thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "link_HK": {
+      "type": "string"
+    },
+    "link_EN": {
+      "type": "string"
+    },
+    "link_CN": {
+      "type": "string"
     }
   }
 }

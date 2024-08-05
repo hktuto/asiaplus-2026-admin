@@ -4,7 +4,7 @@
   "info": {
     "singularName": "home",
     "pluralName": "homes",
-    "displayName": "home",
+    "displayName": "Home",
     "description": ""
   },
   "options": {
@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "seo_title": {
-      "pluginOptions": {},
-      "type": "string"
-    },
     "Slider": {
       "type": "component",
       "repeatable": true,

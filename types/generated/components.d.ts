@@ -1,5 +1,29 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
+export interface ProgramsInformation extends Schema.Component {
+  collectionName: 'components_programs_information';
+  info: {
+    displayName: 'information';
+  };
+  attributes: {
+    date_HK: Attribute.String;
+    date_EN: Attribute.String;
+    date_CN: Attribute.String;
+    location_HK: Attribute.RichText;
+    location_EN: Attribute.RichText;
+    location_CN: Attribute.RichText;
+    ticket_HK: Attribute.RichText;
+    ticket_EN: Attribute.RichText;
+    ticket_CN: Attribute.RichText;
+    language_HK: Attribute.String;
+    language_EN: Attribute.String;
+    language_CN: Attribute.String;
+    meet_session_HK: Attribute.String;
+    meet_session_EN: Attribute.String;
+    meet_session_CN: Attribute.String;
+  };
+}
+
 export interface ProgramsProgram extends Schema.Component {
   collectionName: 'components_programs_programs';
   info: {
@@ -8,50 +32,17 @@ export interface ProgramsProgram extends Schema.Component {
     description: '';
   };
   attributes: {
+    title_HK: Attribute.String;
+    title_EN: Attribute.String;
+    title_CN: Attribute.String;
+    content_HK: Attribute.RichText;
+    content_EN: Attribute.RichText;
+    content_CN: Attribute.RichText;
     startDate: Attribute.Date;
     endDate: Attribute.Date;
     startTime: Attribute.Time;
     endTime: Attribute.Time;
-    location_EN: Attribute.Text;
-    location_HK: Attribute.Text;
-    register_EN: Attribute.Text;
-    register_HK: Attribute.Text;
-    period_EN: Attribute.Text;
-    period_HK: Attribute.Text;
-    liveURL: Attribute.String;
-    videoURL: Attribute.String;
-    displayTime_EN: Attribute.String;
-    displayTime_HK: Attribute.String;
-    target_EN: Attribute.Text;
-    target_HK: Attribute.Text;
-    quota_EN: Attribute.Text;
-    quota_HK: Attribute.Text;
-    name_EN: Attribute.Text;
-    name_HK: Attribute.String;
-    district: Attribute.Relation<
-      'programs.program',
-      'oneToOne',
-      'api::district.district'
-    >;
-    categories: Attribute.JSON &
-      Attribute.CustomField<
-        'plugin::multi-select.multi-select',
-        [
-          'World_Book_Day_Creative_Competition',
-          'Chinese_Culture_Workshop',
-          'Chinese_Culture_Activities',
-          'Interactive Storytelling Device',
-          'Traditional Performing Art',
-          'Hong_Kong_Inter-School_Chinese_Reading_Final_Contest_cum_Award_Ceremony',
-          'Read Together for Half an Hour',
-          'Other Activities',
-          'Handicraft Workshops',
-          'Story Sharing Sessions',
-          'Online_Reading_Club',
-          'HKRW_Fun_Day',
-          'HKRW_kick-off_ceremony_and_Carnival'
-        ]
-      >;
+    google_sheet_id: Attribute.String;
   };
 }
 
@@ -69,6 +60,8 @@ export interface UiMenuItem extends Schema.Component {
     show: Attribute.Boolean & Attribute.DefaultTo<true>;
     label_HK: Attribute.String;
     subMenu: Attribute.Component<'ui.sub-menu', true>;
+    label_CN: Attribute.String;
+    show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
@@ -80,14 +73,30 @@ export interface UiSlide extends Schema.Component {
     description: '';
   };
   attributes: {
-    url_EN: Attribute.String;
+    video_EN: Attribute.String;
     image: Attribute.Media;
-    title: Attribute.String;
+    title_CN: Attribute.String;
     title_EN: Attribute.Text;
     title_HK: Attribute.String;
-    url_HK: Attribute.String;
-    url_ZH: Attribute.String;
+    video_HK: Attribute.String;
+    video_ZH: Attribute.String;
     thumbnail: Attribute.Media;
+    link_HK: Attribute.String;
+    link_EN: Attribute.String;
+    link_CN: Attribute.String;
+  };
+}
+
+export interface UiSocial extends Schema.Component {
+  collectionName: 'components_ui_socials';
+  info: {
+    displayName: 'social';
+    icon: 'alien';
+  };
+  attributes: {
+    label: Attribute.String;
+    icon: Attribute.Media & Attribute.Required;
+    link: Attribute.String & Attribute.Required;
   };
 }
 
@@ -96,6 +105,7 @@ export interface UiSubMenu extends Schema.Component {
   info: {
     displayName: 'subMenu';
     icon: 'bulletList';
+    description: '';
   };
   attributes: {
     label_EN: Attribute.String;
@@ -103,15 +113,19 @@ export interface UiSubMenu extends Schema.Component {
     blank: Attribute.Boolean;
     show: Attribute.Boolean;
     url: Attribute.String;
+    label_CN: Attribute.String;
+    show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
+      'programs.information': ProgramsInformation;
       'programs.program': ProgramsProgram;
       'ui.menu-item': UiMenuItem;
       'ui.slide': UiSlide;
+      'ui.social': UiSocial;
       'ui.sub-menu': UiSubMenu;
     }
   }

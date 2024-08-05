@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_ui_socials",
+  "info": {
+    "displayName": "social",
+    "icon": "alien"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "icon": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -4,7 +4,7 @@
   "info": {
     "singularName": "menu",
     "pluralName": "menus",
-    "displayName": "menu",
+    "displayName": "Main Menu",
     "description": ""
   },
   "options": {
@@ -12,18 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
-      "pluginOptions": {}
-    },
     "item": {
       "displayName": "menu_item",
       "type": "component",

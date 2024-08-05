@@ -24,48 +24,11 @@
     "order": {
       "type": "integer"
     },
-    "externalURL": {
-      "type": "string"
-    },
-    "feature": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "showInHome": {
-      "type": "boolean",
-      "default": false
-    },
-    "color": {
-      "type": "customField",
-      "regex": "^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$",
-      "customField": "plugin::color-picker.color"
-    },
-    "showFeatureImage": {
-      "type": "boolean",
-      "default": false
-    },
     "events": {
       "type": "relation",
-      "relation": "manyToMany",
+      "relation": "oneToMany",
       "target": "api::event.event",
-      "inversedBy": "categories"
-    },
-    "show_programs": {
-      "type": "boolean",
-      "default": false
-    },
-    "remark_EN": {
-      "type": "text"
-    },
-    "remark_HK": {
-      "type": "text"
+      "mappedBy": "category"
     }
   }
 }

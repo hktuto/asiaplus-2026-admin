@@ -2,7 +2,8 @@
   "collectionName": "components_ui_sub_menus",
   "info": {
     "displayName": "subMenu",
-    "icon": "bulletList"
+    "icon": "bulletList",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -20,6 +21,13 @@
     },
     "url": {
       "type": "string"
+    },
+    "label_CN": {
+      "type": "string"
+    },
+    "show_in_desktop": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
