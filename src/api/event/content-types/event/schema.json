@@ -21,7 +21,7 @@
     "title_CN": {
       "type": "string"
     },
-    "information_HK": {
+    "program_HK": {
       "type": "richtext"
     },
     "subTitle_HK": {
@@ -62,10 +62,10 @@
       "repeatable": false,
       "component": "programs.information"
     },
-    "information_EN": {
+    "program_EN": {
       "type": "richtext"
     },
-    "information_CN": {
+    "program_CN": {
       "type": "richtext"
     },
     "subTitle_EN": {

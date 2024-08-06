@@ -843,7 +843,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     title_HK: Attribute.String;
     title_EN: Attribute.String;
     title_CN: Attribute.String;
-    information_HK: Attribute.RichText;
+    program_HK: Attribute.RichText;
     subTitle_HK: Attribute.String;
     artist_HK: Attribute.RichText;
     artist_EN: Attribute.RichText;
@@ -852,8 +852,8 @@ export interface ApiEventEvent extends Schema.CollectionType {
     brochure_cover: Attribute.Media;
     program: Attribute.Component<'programs.program', true>;
     infomation: Attribute.Component<'programs.information'>;
-    information_EN: Attribute.RichText;
-    information_CN: Attribute.RichText;
+    program_EN: Attribute.RichText;
+    program_CN: Attribute.RichText;
     subTitle_EN: Attribute.String;
     subTitle_CN: Attribute.String;
     category: Attribute.Relation<
