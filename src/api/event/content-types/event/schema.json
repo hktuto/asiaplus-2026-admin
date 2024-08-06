@@ -83,6 +83,11 @@
     "slug": {
       "type": "string",
       "unique": true
+    },
+    "slide": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.slide"
     }
   }
 }

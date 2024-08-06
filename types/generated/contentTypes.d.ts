@@ -862,6 +862,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'api::category.category'
     >;
     slug: Attribute.String & Attribute.Unique;
+    slide: Attribute.Component<'ui.slide'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
