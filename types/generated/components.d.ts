@@ -24,6 +24,16 @@ export interface ProgramsInformation extends Schema.Component {
   };
 }
 
+export interface ProgramsProgramDate extends Schema.Component {
+  collectionName: 'components_programs_program_dates';
+  info: {
+    displayName: 'programDate';
+  };
+  attributes: {
+    date: Attribute.Date;
+  };
+}
+
 export interface ProgramsProgram extends Schema.Component {
   collectionName: 'components_programs_programs';
   info: {
@@ -38,11 +48,11 @@ export interface ProgramsProgram extends Schema.Component {
     content_HK: Attribute.RichText;
     content_EN: Attribute.RichText;
     content_CN: Attribute.RichText;
-    startDate: Attribute.Date;
-    endDate: Attribute.Date;
-    startTime: Attribute.Time;
-    endTime: Attribute.Time;
     google_sheet_id: Attribute.String;
+    displayTime_HK: Attribute.String;
+    displayTime_EN: Attribute.String;
+    displayTime_CN: Attribute.String;
+    dates: Attribute.Component<'programs.program-date', true>;
   };
 }
 
@@ -122,6 +132,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'programs.information': ProgramsInformation;
+      'programs.program-date': ProgramsProgramDate;
       'programs.program': ProgramsProgram;
       'ui.menu-item': UiMenuItem;
       'ui.slide': UiSlide;

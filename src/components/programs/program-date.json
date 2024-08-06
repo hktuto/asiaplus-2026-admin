@@ -1,0 +1,12 @@
+{
+  "collectionName": "components_programs_program_dates",
+  "info": {
+    "displayName": "programDate"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    }
+  }
+}

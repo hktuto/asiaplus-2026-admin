@@ -25,20 +25,22 @@
     "content_CN": {
       "type": "richtext"
     },
-    "startDate": {
-      "type": "date"
-    },
-    "endDate": {
-      "type": "date"
-    },
-    "startTime": {
-      "type": "time"
-    },
-    "endTime": {
-      "type": "time"
-    },
     "google_sheet_id": {
       "type": "string"
+    },
+    "displayTime_HK": {
+      "type": "string"
+    },
+    "displayTime_EN": {
+      "type": "string"
+    },
+    "displayTime_CN": {
+      "type": "string"
+    },
+    "dates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programs.program-date"
     }
   }
 }
