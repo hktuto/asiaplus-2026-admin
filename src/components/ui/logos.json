@@ -10,14 +10,24 @@
       "type": "string"
     },
     "img": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "url_HK": {
+      "type": "string"
+    },
+    "url_EN": {
+      "type": "string"
+    },
+    "url_CN": {
+      "type": "string"
     }
   }
 }

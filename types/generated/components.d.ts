@@ -69,6 +69,9 @@ export interface UiLogos extends Schema.Component {
   attributes: {
     label: Attribute.String;
     img: Attribute.Media;
+    url_HK: Attribute.String;
+    url_EN: Attribute.String;
+    url_CN: Attribute.String;
   };
 }
 
