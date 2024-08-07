@@ -4,6 +4,7 @@ export interface ProgramsInformation extends Schema.Component {
   collectionName: 'components_programs_information';
   info: {
     displayName: 'information';
+    description: '';
   };
   attributes: {
     date_HK: Attribute.String;
@@ -21,6 +22,9 @@ export interface ProgramsInformation extends Schema.Component {
     meet_session_HK: Attribute.String;
     meet_session_EN: Attribute.String;
     meet_session_CN: Attribute.String;
+    remark_HK: Attribute.RichText;
+    remark_EN: Attribute.RichText;
+    remark_CN: Attribute.RichText;
   };
 }
 
@@ -53,6 +57,18 @@ export interface ProgramsProgram extends Schema.Component {
     displayTime_EN: Attribute.String;
     displayTime_CN: Attribute.String;
     dates: Attribute.Component<'programs.program-date', true>;
+  };
+}
+
+export interface UiLogos extends Schema.Component {
+  collectionName: 'components_ui_logos';
+  info: {
+    displayName: 'logos';
+    description: '';
+  };
+  attributes: {
+    label: Attribute.String;
+    img: Attribute.Media;
   };
 }
 
@@ -134,6 +150,7 @@ declare module '@strapi/types' {
       'programs.information': ProgramsInformation;
       'programs.program-date': ProgramsProgramDate;
       'programs.program': ProgramsProgram;
+      'ui.logos': UiLogos;
       'ui.menu-item': UiMenuItem;
       'ui.slide': UiSlide;
       'ui.social': UiSocial;

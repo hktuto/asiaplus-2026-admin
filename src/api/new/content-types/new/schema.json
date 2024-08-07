@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "news",
+  "info": {
+    "singularName": "new",
+    "pluralName": "news",
+    "displayName": "new"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title_HK": {
+      "type": "string"
+    },
+    "title_EN": {
+      "type": "string"
+    },
+    "title_CN": {
+      "type": "string"
+    },
+    "content_HK": {
+      "type": "richtext"
+    },
+    "content_EN": {
+      "type": "richtext"
+    },
+    "content_CN": {
+      "type": "richtext"
+    }
+  }
+}

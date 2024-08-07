@@ -1,7 +1,8 @@
 {
   "collectionName": "components_programs_information",
   "info": {
-    "displayName": "information"
+    "displayName": "information",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -49,6 +50,15 @@
     },
     "meet_session_CN": {
       "type": "string"
+    },
+    "remark_HK": {
+      "type": "richtext"
+    },
+    "remark_EN": {
+      "type": "richtext"
+    },
+    "remark_CN": {
+      "type": "richtext"
     }
   }
 }

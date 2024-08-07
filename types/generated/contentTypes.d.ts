@@ -862,7 +862,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'api::category.category'
     >;
     slug: Attribute.String & Attribute.Unique;
-    slide: Attribute.Component<'ui.slide'>;
+    slide: Attribute.Component<'ui.slide', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -893,12 +893,12 @@ export interface ApiFooterFooter extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    footer_logos: Attribute.Media;
     copyright_HK: Attribute.Text;
     copyright_EN: Attribute.Text;
     copyright_CN: Attribute.Text;
     footer_main_menu: Attribute.Component<'ui.menu-item', true>;
     footer_sub_menu: Attribute.Component<'ui.menu-item', true>;
+    logos: Attribute.Component<'ui.logos', true>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -959,6 +959,33 @@ export interface ApiMenuMenu extends Schema.SingleType {
     createdBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::menu.menu', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiNewNew extends Schema.CollectionType {
+  collectionName: 'news';
+  info: {
+    singularName: 'new';
+    pluralName: 'news';
+    displayName: 'new';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title_HK: Attribute.String;
+    title_EN: Attribute.String;
+    title_CN: Attribute.String;
+    content_HK: Attribute.RichText;
+    content_EN: Attribute.RichText;
+    content_CN: Attribute.RichText;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::new.new', 'oneToOne', 'admin::user'> &
       Attribute.Private;
   };
 }
@@ -1046,6 +1073,7 @@ declare module '@strapi/types' {
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
       'api::menu.menu': ApiMenuMenu;
+      'api::new.new': ApiNewNew;
       'api::page.page': ApiPagePage;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
     }

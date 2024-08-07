@@ -12,14 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "footer_logos": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
-    },
     "copyright_HK": {
       "type": "text"
     },
@@ -38,6 +30,12 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.menu-item"
+    },
+    "logos": {
+      "displayName": "logos",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.logos"
     }
   }
 }

@@ -86,7 +86,7 @@
     },
     "slide": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "ui.slide"
     }
   }
