@@ -851,7 +851,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     brochure_pdf: Attribute.Media;
     brochure_cover: Attribute.Media;
     program: Attribute.Component<'programs.program', true>;
-    infomation: Attribute.Component<'programs.information'>;
+    infomation: Attribute.Component<'programs.information', true>;
     program_EN: Attribute.RichText;
     program_CN: Attribute.RichText;
     subTitle_EN: Attribute.String;
@@ -863,6 +863,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     >;
     slug: Attribute.String & Attribute.Unique;
     slide: Attribute.Component<'ui.slide', true>;
+    displayTime_HK: Attribute.String;
+    displayTime_EN: Attribute.String;
+    displayTime_CN: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

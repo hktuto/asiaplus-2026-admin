@@ -25,6 +25,10 @@ export interface ProgramsInformation extends Schema.Component {
     remark_HK: Attribute.RichText;
     remark_EN: Attribute.RichText;
     remark_CN: Attribute.RichText;
+    tittle_HK: Attribute.String;
+    tittle_EN: Attribute.String;
+    tittle_CN: Attribute.String;
+    dates: Attribute.Component<'programs.program-date', true>;
   };
 }
 

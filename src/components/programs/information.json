@@ -59,6 +59,20 @@
     },
     "remark_CN": {
       "type": "richtext"
+    },
+    "tittle_HK": {
+      "type": "string"
+    },
+    "tittle_EN": {
+      "type": "string"
+    },
+    "tittle_CN": {
+      "type": "string"
+    },
+    "dates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programs.program-date"
     }
   }
 }

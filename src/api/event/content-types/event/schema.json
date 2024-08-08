@@ -59,7 +59,7 @@
     },
     "infomation": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "programs.information"
     },
     "program_EN": {
@@ -88,6 +88,15 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.slide"
+    },
+    "displayTime_HK": {
+      "type": "string"
+    },
+    "displayTime_EN": {
+      "type": "string"
+    },
+    "displayTime_CN": {
+      "type": "string"
     }
   }
 }
