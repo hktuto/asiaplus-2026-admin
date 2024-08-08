@@ -4,7 +4,8 @@
   "info": {
     "singularName": "new",
     "pluralName": "news",
-    "displayName": "new"
+    "displayName": "new",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -28,6 +29,15 @@
     },
     "content_CN": {
       "type": "richtext"
+    },
+    "shortDescription_HK": {
+      "type": "string"
+    },
+    "shortDescription_EN": {
+      "type": "string"
+    },
+    "shortDescription_CN": {
+      "type": "string"
     }
   }
 }

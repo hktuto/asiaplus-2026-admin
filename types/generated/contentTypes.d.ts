@@ -969,6 +969,7 @@ export interface ApiNewNew extends Schema.CollectionType {
     singularName: 'new';
     pluralName: 'news';
     displayName: 'new';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -980,6 +981,9 @@ export interface ApiNewNew extends Schema.CollectionType {
     content_HK: Attribute.RichText;
     content_EN: Attribute.RichText;
     content_CN: Attribute.RichText;
+    shortDescription_HK: Attribute.String;
+    shortDescription_EN: Attribute.String;
+    shortDescription_CN: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
