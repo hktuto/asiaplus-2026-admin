@@ -24,14 +24,14 @@
     "order": {
       "type": "integer"
     },
-    "events": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::event.event",
-      "mappedBy": "category"
-    },
     "name_CN": {
       "type": "string"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event.event",
+      "mappedBy": "categories"
     }
   }
 }

@@ -804,12 +804,12 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
     name_EN: Attribute.String;
     name: Attribute.UID;
     order: Attribute.Integer;
+    name_CN: Attribute.String;
     events: Attribute.Relation<
       'api::category.category',
-      'oneToMany',
+      'manyToMany',
       'api::event.event'
     >;
-    name_CN: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -856,9 +856,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     program_CN: Attribute.RichText;
     subTitle_EN: Attribute.String;
     subTitle_CN: Attribute.String;
-    category: Attribute.Relation<
+    categories: Attribute.Relation<
       'api::event.event',
-      'manyToOne',
+      'manyToMany',
       'api::category.category'
     >;
     slug: Attribute.String & Attribute.Unique;
