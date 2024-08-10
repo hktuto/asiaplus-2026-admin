@@ -38,6 +38,10 @@
     },
     "shortDescription_CN": {
       "type": "string"
+    },
+    "oder": {
+      "type": "integer",
+      "default": 999
     }
   }
 }

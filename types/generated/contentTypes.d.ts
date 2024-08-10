@@ -987,6 +987,7 @@ export interface ApiNewNew extends Schema.CollectionType {
     shortDescription_HK: Attribute.String;
     shortDescription_EN: Attribute.String;
     shortDescription_CN: Attribute.String;
+    oder: Attribute.Integer & Attribute.DefaultTo<999>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
