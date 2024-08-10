@@ -866,6 +866,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     displayTime_HK: Attribute.String;
     displayTime_EN: Attribute.String;
     displayTime_CN: Attribute.String;
+    order: Attribute.Integer & Attribute.DefaultTo<999>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
