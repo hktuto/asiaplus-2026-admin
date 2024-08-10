@@ -101,6 +101,11 @@
     "order": {
       "type": "integer",
       "default": 999
+    },
+    "dates": {
+      "type": "component",
+      "repeatable": true,
+      "component": "programs.program-date"
     }
   }
 }
