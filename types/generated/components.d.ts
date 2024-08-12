@@ -103,13 +103,15 @@ export interface UiMenuItem extends Schema.Component {
   };
   attributes: {
     label_EN: Attribute.String;
-    url: Attribute.String & Attribute.DefaultTo<'#'>;
     blank: Attribute.Boolean & Attribute.DefaultTo<false>;
     show: Attribute.Boolean & Attribute.DefaultTo<true>;
     label_HK: Attribute.String;
     subMenu: Attribute.Component<'ui.sub-menu', true>;
     label_CN: Attribute.String;
     show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
+    url_HK: Attribute.String;
+    url_EN: Attribute.String;
+    url_CN: Attribute.String;
   };
 }
 
