@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_ui_sectoins",
+  "info": {
+    "displayName": "sectoin",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title_HK": {
+      "type": "string"
+    },
+    "title_EN": {
+      "type": "string"
+    },
+    "title_CN": {
+      "type": "string"
+    },
+    "files": {
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.download"
+    }
+  }
+}

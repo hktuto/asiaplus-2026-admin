@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "downloads",
+  "info": {
+    "singularName": "download",
+    "pluralName": "downloads",
+    "displayName": "download"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "downloadSection": {
+      "displayName": "sectoin",
+      "type": "component",
+      "repeatable": true,
+      "component": "ui.sectoin"
+    }
+  }
+}

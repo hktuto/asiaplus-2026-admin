@@ -36,9 +36,11 @@ export interface ProgramsProgramDate extends Schema.Component {
   collectionName: 'components_programs_program_dates';
   info: {
     displayName: 'programDate';
+    description: '';
   };
   attributes: {
     date: Attribute.Date;
+    time: Attribute.Time;
   };
 }
 
@@ -61,6 +63,19 @@ export interface ProgramsProgram extends Schema.Component {
     displayTime_EN: Attribute.String;
     displayTime_CN: Attribute.String;
     dates: Attribute.Component<'programs.program-date', true>;
+  };
+}
+
+export interface UiDownload extends Schema.Component {
+  collectionName: 'components_ui_downloads';
+  info: {
+    displayName: 'download';
+  };
+  attributes: {
+    title_HK: Attribute.String;
+    title_EN: Attribute.String;
+    title_CN: Attribute.String;
+    file: Attribute.Media;
   };
 }
 
@@ -95,6 +110,20 @@ export interface UiMenuItem extends Schema.Component {
     subMenu: Attribute.Component<'ui.sub-menu', true>;
     label_CN: Attribute.String;
     show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
+  };
+}
+
+export interface UiSectoin extends Schema.Component {
+  collectionName: 'components_ui_sectoins';
+  info: {
+    displayName: 'sectoin';
+    description: '';
+  };
+  attributes: {
+    title_HK: Attribute.String;
+    title_EN: Attribute.String;
+    title_CN: Attribute.String;
+    files: Attribute.Component<'ui.download', true>;
   };
 }
 
@@ -157,8 +186,10 @@ declare module '@strapi/types' {
       'programs.information': ProgramsInformation;
       'programs.program-date': ProgramsProgramDate;
       'programs.program': ProgramsProgram;
+      'ui.download': UiDownload;
       'ui.logos': UiLogos;
       'ui.menu-item': UiMenuItem;
+      'ui.sectoin': UiSectoin;
       'ui.slide': UiSlide;
       'ui.social': UiSocial;
       'ui.sub-menu': UiSubMenu;

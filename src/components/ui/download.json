@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_ui_downloads",
+  "info": {
+    "displayName": "download"
+  },
+  "options": {},
+  "attributes": {
+    "title_HK": {
+      "type": "string"
+    },
+    "title_EN": {
+      "type": "string"
+    },
+    "title_CN": {
+      "type": "string"
+    },
+    "file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

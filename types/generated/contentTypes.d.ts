@@ -828,6 +828,36 @@ export interface ApiCategoryCategory extends Schema.CollectionType {
   };
 }
 
+export interface ApiDownloadDownload extends Schema.SingleType {
+  collectionName: 'downloads';
+  info: {
+    singularName: 'download';
+    pluralName: 'downloads';
+    displayName: 'download';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    downloadSection: Attribute.Component<'ui.sectoin', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::download.download',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::download.download',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiEventEvent extends Schema.CollectionType {
   collectionName: 'events';
   info: {
@@ -1079,6 +1109,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::category.category': ApiCategoryCategory;
+      'api::download.download': ApiDownloadDownload;
       'api::event.event': ApiEventEvent;
       'api::footer.footer': ApiFooterFooter;
       'api::home.home': ApiHomeHome;
