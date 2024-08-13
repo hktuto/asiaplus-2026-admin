@@ -19,6 +19,15 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.download"
+    },
+    "content_HK": {
+      "type": "richtext"
+    },
+    "content_EN": {
+      "type": "richtext"
+    },
+    "content_CN": {
+      "type": "richtext"
     }
   }
 }

@@ -126,6 +126,9 @@ export interface UiSectoin extends Schema.Component {
     title_EN: Attribute.String;
     title_CN: Attribute.String;
     files: Attribute.Component<'ui.download', true>;
+    content_HK: Attribute.RichText;
+    content_EN: Attribute.RichText;
+    content_CN: Attribute.RichText;
   };
 }
 
