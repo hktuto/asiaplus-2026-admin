@@ -899,6 +899,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     order: Attribute.Integer & Attribute.DefaultTo<999>;
     feature: Attribute.Boolean & Attribute.DefaultTo<true>;
     sections: Attribute.Component<'ui.sectoin', true>;
+    tag_HK: Attribute.String;
+    tag_EN: Attribute.String;
+    tag_CN: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

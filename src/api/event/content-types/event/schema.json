@@ -110,6 +110,15 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.sectoin"
+    },
+    "tag_HK": {
+      "type": "string"
+    },
+    "tag_EN": {
+      "type": "string"
+    },
+    "tag_CN": {
+      "type": "string"
     }
   }
 }
