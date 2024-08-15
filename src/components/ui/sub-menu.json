@@ -28,6 +28,15 @@
     "show_in_desktop": {
       "type": "boolean",
       "default": true
+    },
+    "url_HK": {
+      "type": "string"
+    },
+    "url_EN": {
+      "type": "string"
+    },
+    "url_CN": {
+      "type": "string"
     }
   }
 }

@@ -182,6 +182,9 @@ export interface UiSubMenu extends Schema.Component {
     url: Attribute.String;
     label_CN: Attribute.String;
     show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
+    url_HK: Attribute.String;
+    url_EN: Attribute.String;
+    url_CN: Attribute.String;
   };
 }
 
