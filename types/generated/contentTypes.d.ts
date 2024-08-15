@@ -1064,6 +1064,42 @@ export interface ApiPagePage extends Schema.CollectionType {
   };
 }
 
+export interface ApiPopupPopup extends Schema.SingleType {
+  collectionName: 'popups';
+  info: {
+    singularName: 'popup';
+    pluralName: 'popups';
+    displayName: 'popup';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content_HK: Attribute.RichText;
+    content_EN: Attribute.RichText;
+    content_CN: Attribute.RichText;
+    alway_show: Attribute.Boolean;
+    title_HK: Attribute.String;
+    title_EN: Attribute.String;
+    title_CN: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::popup.popup',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::popup.popup',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiSocialMediaSocialMedia extends Schema.SingleType {
   collectionName: 'social_medias';
   info: {
@@ -1120,6 +1156,7 @@ declare module '@strapi/types' {
       'api::menu.menu': ApiMenuMenu;
       'api::new.new': ApiNewNew;
       'api::page.page': ApiPagePage;
+      'api::popup.popup': ApiPopupPopup;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
     }
   }
