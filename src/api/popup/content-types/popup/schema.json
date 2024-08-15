@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "popups",
+  "info": {
+    "singularName": "popup",
+    "pluralName": "popups",
+    "displayName": "popup"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "content_HK": {
+      "type": "richtext"
+    },
+    "content_EN": {
+      "type": "richtext"
+    },
+    "content_CN": {
+      "type": "richtext"
+    },
+    "alway_show": {
+      "type": "boolean"
+    },
+    "title_HK": {
+      "type": "string"
+    },
+    "title_EN": {
+      "type": "string"
+    },
+    "title_CN": {
+      "type": "string"
+    }
+  }
+}
