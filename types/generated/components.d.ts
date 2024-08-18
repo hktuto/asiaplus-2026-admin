@@ -29,6 +29,14 @@ export interface ProgramsInformation extends Schema.Component {
     tittle_EN: Attribute.String;
     tittle_CN: Attribute.String;
     dates: Attribute.Component<'programs.program-date', true>;
+    sheetId: Attribute.String;
+    registerEmail: Attribute.RichText;
+    formPrefixHK: Attribute.RichText;
+    formPrefixEN: Attribute.RichText;
+    formPrefixCN: Attribute.RichText;
+    formSuffixHK: Attribute.RichText;
+    formSuffixEN: Attribute.RichText;
+    formSuffixCN: Attribute.RichText;
   };
 }
 
@@ -63,6 +71,14 @@ export interface ProgramsProgram extends Schema.Component {
     displayTime_EN: Attribute.String;
     displayTime_CN: Attribute.String;
     dates: Attribute.Component<'programs.program-date', true>;
+    sheetId: Attribute.String;
+    registerEmail: Attribute.RichText;
+    formPrefixHK: Attribute.RichText;
+    formPrefixEN: Attribute.RichText;
+    formPrefixCN: Attribute.RichText;
+    formSuffixHK: Attribute.RichText;
+    formSuffixCN: Attribute.RichText;
+    formSuffixEN: Attribute.RichText;
   };
 }
 

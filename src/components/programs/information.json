@@ -73,6 +73,30 @@
       "type": "component",
       "repeatable": true,
       "component": "programs.program-date"
+    },
+    "sheetId": {
+      "type": "string"
+    },
+    "registerEmail": {
+      "type": "richtext"
+    },
+    "formPrefixHK": {
+      "type": "richtext"
+    },
+    "formPrefixEN": {
+      "type": "richtext"
+    },
+    "formPrefixCN": {
+      "type": "richtext"
+    },
+    "formSuffixHK": {
+      "type": "richtext"
+    },
+    "formSuffixEN": {
+      "type": "richtext"
+    },
+    "formSuffixCN": {
+      "type": "richtext"
     }
   }
 }
