@@ -39,6 +39,7 @@ export interface ProgramsInformation extends Schema.Component {
     formSuffixCN: Attribute.RichText;
     sitLimit: Attribute.Integer;
     registerEmailTitle: Attribute.String;
+    sitRegistered: Attribute.Integer & Attribute.DefaultTo<0>;
   };
 }
 
@@ -83,6 +84,7 @@ export interface ProgramsProgram extends Schema.Component {
     formSuffixEN: Attribute.RichText;
     sitLimit: Attribute.Integer;
     registerEmailTitle: Attribute.String;
+    sitRegistered: Attribute.Integer & Attribute.DefaultTo<0>;
   };
 }
 

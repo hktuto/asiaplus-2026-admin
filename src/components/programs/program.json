@@ -71,6 +71,10 @@
     },
     "registerEmailTitle": {
       "type": "string"
+    },
+    "sitRegistered": {
+      "type": "integer",
+      "default": 0
     }
   }
 }
