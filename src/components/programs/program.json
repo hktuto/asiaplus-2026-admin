@@ -68,6 +68,9 @@
     },
     "sitLimit": {
       "type": "integer"
+    },
+    "registerEmailTitle": {
+      "type": "string"
     }
   }
 }
