@@ -97,6 +97,9 @@
     },
     "formSuffixCN": {
       "type": "richtext"
+    },
+    "sitLimit": {
+      "type": "integer"
     }
   }
 }

@@ -37,6 +37,7 @@ export interface ProgramsInformation extends Schema.Component {
     formSuffixHK: Attribute.RichText;
     formSuffixEN: Attribute.RichText;
     formSuffixCN: Attribute.RichText;
+    sitLimit: Attribute.Integer;
   };
 }
 
@@ -79,6 +80,7 @@ export interface ProgramsProgram extends Schema.Component {
     formSuffixHK: Attribute.RichText;
     formSuffixCN: Attribute.RichText;
     formSuffixEN: Attribute.RichText;
+    sitLimit: Attribute.Integer;
   };
 }
 

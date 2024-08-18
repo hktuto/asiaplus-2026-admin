@@ -65,6 +65,9 @@
     },
     "formSuffixEN": {
       "type": "richtext"
+    },
+    "sitLimit": {
+      "type": "integer"
     }
   }
 }
