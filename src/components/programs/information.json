@@ -107,6 +107,15 @@
     "sitRegistered": {
       "type": "integer",
       "default": 0
+    },
+    "displayDate_HK": {
+      "type": "string"
+    },
+    "displayDate_EN": {
+      "type": "string"
+    },
+    "displayDate_CN": {
+      "type": "string"
     }
   }
 }
