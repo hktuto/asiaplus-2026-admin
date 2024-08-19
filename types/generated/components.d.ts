@@ -85,6 +85,9 @@ export interface ProgramsProgram extends Schema.Component {
     sitLimit: Attribute.Integer;
     registerEmailTitle: Attribute.String;
     sitRegistered: Attribute.Integer & Attribute.DefaultTo<0>;
+    displayDate_HK: Attribute.String;
+    displayDate_EN: Attribute.String;
+    displayDate_CN: Attribute.String;
   };
 }
 
