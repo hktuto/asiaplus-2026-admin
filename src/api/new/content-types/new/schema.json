@@ -42,6 +42,16 @@
     "oder": {
       "type": "integer",
       "default": 999
+    },
+    "feature": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
