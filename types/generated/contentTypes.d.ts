@@ -834,6 +834,7 @@ export interface ApiDownloadDownload extends Schema.SingleType {
     singularName: 'download';
     pluralName: 'downloads';
     displayName: 'download';
+    description: '';
   };
   options: {
     draftAndPublish: true;

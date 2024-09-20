@@ -98,12 +98,14 @@ export interface UiDownload extends Schema.Component {
   collectionName: 'components_ui_downloads';
   info: {
     displayName: 'download';
+    description: '';
   };
   attributes: {
     title_HK: Attribute.String;
     title_EN: Attribute.String;
     title_CN: Attribute.String;
     file: Attribute.Media;
+    thumbnail: Attribute.Media;
   };
 }
 
@@ -157,6 +159,8 @@ export interface UiSectoin extends Schema.Component {
     content_HK: Attribute.RichText;
     content_EN: Attribute.RichText;
     content_CN: Attribute.RichText;
+    event: Attribute.Relation<'ui.sectoin', 'oneToOne', 'api::event.event'>;
+    redirect_url: Attribute.String;
   };
 }
 
