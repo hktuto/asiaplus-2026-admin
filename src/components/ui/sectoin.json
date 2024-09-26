@@ -36,6 +36,10 @@
     },
     "redirect_url": {
       "type": "string"
+    },
+    "show": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

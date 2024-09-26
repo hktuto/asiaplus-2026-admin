@@ -161,6 +161,7 @@ export interface UiSectoin extends Schema.Component {
     content_CN: Attribute.RichText;
     event: Attribute.Relation<'ui.sectoin', 'oneToOne', 'api::event.event'>;
     redirect_url: Attribute.String;
+    show: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
