@@ -119,6 +119,15 @@
     },
     "tag_CN": {
       "type": "string"
+    },
+    "pre_HK": {
+      "type": "blocks"
+    },
+    "pre_EN": {
+      "type": "blocks"
+    },
+    "pre_CN": {
+      "type": "blocks"
     }
   }
 }
