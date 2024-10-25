@@ -121,13 +121,13 @@
       "type": "string"
     },
     "pre_HK": {
-      "type": "blocks"
+      "type": "richtext"
     },
     "pre_EN": {
-      "type": "blocks"
+      "type": "richtext"
     },
     "pre_CN": {
-      "type": "blocks"
+      "type": "richtext"
     }
   }
 }

@@ -903,9 +903,9 @@ export interface ApiEventEvent extends Schema.CollectionType {
     tag_HK: Attribute.String;
     tag_EN: Attribute.String;
     tag_CN: Attribute.String;
-    pre_HK: Attribute.Blocks;
-    pre_EN: Attribute.Blocks;
-    pre_CN: Attribute.Blocks;
+    pre_HK: Attribute.RichText;
+    pre_EN: Attribute.RichText;
+    pre_CN: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
