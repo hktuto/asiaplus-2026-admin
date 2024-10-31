@@ -100,6 +100,7 @@ export interface ProgramsRegisterForm extends Schema.Component {
   info: {
     displayName: 'registerForm';
     icon: 'attachment';
+    description: '';
   };
   attributes: {
     sheetId: Attribute.String;
@@ -115,6 +116,7 @@ export interface ProgramsRegisterForm extends Schema.Component {
     submitTextHK: Attribute.String;
     submitTextEN: Attribute.String;
     submitTextCN: Attribute.String;
+    registerEmailTitle: Attribute.String;
   };
 }
 

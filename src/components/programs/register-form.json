@@ -2,7 +2,8 @@
   "collectionName": "components_programs_register_forms",
   "info": {
     "displayName": "registerForm",
-    "icon": "attachment"
+    "icon": "attachment",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -43,6 +44,9 @@
       "type": "string"
     },
     "submitTextCN": {
+      "type": "string"
+    },
+    "registerEmailTitle": {
       "type": "string"
     }
   }
