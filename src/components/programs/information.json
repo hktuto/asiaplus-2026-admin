@@ -117,7 +117,13 @@
     "displayDate_CN": {
       "type": "string"
     },
-    "files": {
+    "files_HK": {
+      "type": "richtext"
+    },
+    "files_EN": {
+      "type": "richtext"
+    },
+    "files_CN": {
       "type": "richtext"
     }
   }
