@@ -84,6 +84,12 @@
     },
     "displayDate_CN": {
       "type": "string"
+    },
+    "registerForm": {
+      "displayName": "registerForm",
+      "type": "component",
+      "repeatable": true,
+      "component": "programs.register-form"
     }
   }
 }

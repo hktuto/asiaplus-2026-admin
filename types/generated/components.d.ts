@@ -91,6 +91,30 @@ export interface ProgramsProgram extends Schema.Component {
     displayDate_HK: Attribute.String;
     displayDate_EN: Attribute.String;
     displayDate_CN: Attribute.String;
+    registerForm: Attribute.Component<'programs.register-form', true>;
+  };
+}
+
+export interface ProgramsRegisterForm extends Schema.Component {
+  collectionName: 'components_programs_register_forms';
+  info: {
+    displayName: 'registerForm';
+    icon: 'attachment';
+  };
+  attributes: {
+    sheetId: Attribute.String;
+    registerEmail: Attribute.RichText;
+    formPrefixHK: Attribute.RichText;
+    formPrefixEN: Attribute.RichText;
+    formPrefixCN: Attribute.RichText;
+    formSuffixHK: Attribute.RichText;
+    formSuffixEN: Attribute.RichText;
+    formSuffixCN: Attribute.RichText;
+    sitLimit: Attribute.Integer;
+    sitRegistered: Attribute.Integer;
+    submitTextHK: Attribute.String;
+    submitTextEN: Attribute.String;
+    submitTextCN: Attribute.String;
   };
 }
 
@@ -227,6 +251,7 @@ declare module '@strapi/types' {
       'programs.information': ProgramsInformation;
       'programs.program-date': ProgramsProgramDate;
       'programs.program': ProgramsProgram;
+      'programs.register-form': ProgramsRegisterForm;
       'ui.download': UiDownload;
       'ui.logos': UiLogos;
       'ui.menu-item': UiMenuItem;

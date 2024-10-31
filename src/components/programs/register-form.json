@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_programs_register_forms",
+  "info": {
+    "displayName": "registerForm",
+    "icon": "attachment"
+  },
+  "options": {},
+  "attributes": {
+    "sheetId": {
+      "type": "string"
+    },
+    "registerEmail": {
+      "type": "richtext"
+    },
+    "formPrefixHK": {
+      "type": "richtext"
+    },
+    "formPrefixEN": {
+      "type": "richtext"
+    },
+    "formPrefixCN": {
+      "type": "richtext"
+    },
+    "formSuffixHK": {
+      "type": "richtext"
+    },
+    "formSuffixEN": {
+      "type": "richtext"
+    },
+    "formSuffixCN": {
+      "type": "richtext"
+    },
+    "sitLimit": {
+      "type": "integer"
+    },
+    "sitRegistered": {
+      "type": "integer"
+    },
+    "submitTextHK": {
+      "type": "string"
+    },
+    "submitTextEN": {
+      "type": "string"
+    },
+    "submitTextCN": {
+      "type": "string"
+    }
+  }
+}
