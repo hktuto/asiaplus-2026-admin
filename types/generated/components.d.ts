@@ -43,6 +43,7 @@ export interface ProgramsInformation extends Schema.Component {
     displayDate_HK: Attribute.String;
     displayDate_EN: Attribute.String;
     displayDate_CN: Attribute.String;
+    files: Attribute.RichText;
   };
 }
 
