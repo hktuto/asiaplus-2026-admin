@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_ui_popups",
+  "info": {
+    "displayName": "popup",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "enable": {
+      "type": "boolean",
+      "default": true,
+      "required": false
+    },
+    "content_EN": {
+      "type": "richtext"
+    },
+    "once": {
+      "type": "boolean",
+      "default": false
+    },
+    "content_HK": {
+      "type": "richtext"
+    },
+    "content_CN": {
+      "type": "richtext"
+    }
+  }
+}

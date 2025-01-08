@@ -841,6 +841,7 @@ export interface ApiDownloadDownload extends Schema.SingleType {
   };
   attributes: {
     downloadSection: Attribute.Component<'ui.sectoin', true>;
+    popup: Attribute.Component<'ui.popup'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -906,6 +907,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
     pre_HK: Attribute.RichText;
     pre_EN: Attribute.RichText;
     pre_CN: Attribute.RichText;
+    popup: Attribute.Component<'ui.popup'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1059,6 +1061,7 @@ export interface ApiPagePage extends Schema.CollectionType {
     title_CN: Attribute.String;
     content_CN: Attribute.RichText;
     slug: Attribute.String & Attribute.Unique;
+    popup: Attribute.Component<'ui.popup'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

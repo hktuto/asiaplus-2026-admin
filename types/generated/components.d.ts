@@ -174,6 +174,22 @@ export interface UiMenuItem extends Schema.Component {
   };
 }
 
+export interface UiPopup extends Schema.Component {
+  collectionName: 'components_ui_popups';
+  info: {
+    displayName: 'popup';
+    icon: 'archive';
+    description: '';
+  };
+  attributes: {
+    enable: Attribute.Boolean & Attribute.DefaultTo<true>;
+    content_EN: Attribute.RichText;
+    once: Attribute.Boolean & Attribute.DefaultTo<false>;
+    content_HK: Attribute.RichText;
+    content_CN: Attribute.RichText;
+  };
+}
+
 export interface UiSectoin extends Schema.Component {
   collectionName: 'components_ui_sectoins';
   info: {
@@ -260,6 +276,7 @@ declare module '@strapi/types' {
       'ui.download': UiDownload;
       'ui.logos': UiLogos;
       'ui.menu-item': UiMenuItem;
+      'ui.popup': UiPopup;
       'ui.sectoin': UiSectoin;
       'ui.slide': UiSlide;
       'ui.social': UiSocial;

@@ -128,6 +128,11 @@
     },
     "pre_CN": {
       "type": "richtext"
+    },
+    "popup": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.popup"
     }
   }
 }

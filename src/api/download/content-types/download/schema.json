@@ -17,6 +17,11 @@
       "type": "component",
       "repeatable": true,
       "component": "ui.sectoin"
+    },
+    "popup": {
+      "type": "component",
+      "repeatable": false,
+      "component": "ui.popup"
     }
   }
 }
