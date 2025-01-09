@@ -24,6 +24,10 @@
     },
     "content_CN": {
       "type": "richtext"
+    },
+    "alway_show": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

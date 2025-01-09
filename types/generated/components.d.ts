@@ -187,6 +187,7 @@ export interface UiPopup extends Schema.Component {
     once: Attribute.Boolean & Attribute.DefaultTo<false>;
     content_HK: Attribute.RichText;
     content_CN: Attribute.RichText;
+    alway_show: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
