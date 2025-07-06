@@ -908,6 +908,16 @@ export interface ApiEventEvent extends Schema.CollectionType {
     pre_EN: Attribute.RichText;
     pre_CN: Attribute.RichText;
     popup: Attribute.Component<'ui.popup'>;
+    realtedEvents: Attribute.Relation<
+      'api::event.event',
+      'oneToMany',
+      'api::event.event'
+    >;
+    realtedEvent: Attribute.Relation<
+      'api::event.event',
+      'manyToOne',
+      'api::event.event'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
