@@ -910,12 +910,12 @@ export interface ApiEventEvent extends Schema.CollectionType {
     popup: Attribute.Component<'ui.popup'>;
     realtedEvents: Attribute.Relation<
       'api::event.event',
-      'oneToMany',
+      'manyToMany',
       'api::event.event'
     >;
-    realtedEvent: Attribute.Relation<
+    events: Attribute.Relation<
       'api::event.event',
-      'manyToOne',
+      'manyToMany',
       'api::event.event'
     >;
     createdAt: Attribute.DateTime;
