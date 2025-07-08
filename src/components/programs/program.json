@@ -90,6 +90,15 @@
       "type": "component",
       "repeatable": true,
       "component": "programs.register-form"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "other",
+        "workshop",
+        "lecture"
+      ],
+      "default": "other"
     }
   }
 }

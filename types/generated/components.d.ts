@@ -95,6 +95,8 @@ export interface ProgramsProgram extends Schema.Component {
     displayDate_EN: Attribute.String;
     displayDate_CN: Attribute.String;
     registerForm: Attribute.Component<'programs.register-form', true>;
+    category: Attribute.Enumeration<['other', 'workshop', 'lecture']> &
+      Attribute.DefaultTo<'other'>;
   };
 }
 
