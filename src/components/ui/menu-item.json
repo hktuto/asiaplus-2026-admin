@@ -42,6 +42,10 @@
     },
     "url_CN": {
       "type": "string"
+    },
+    "hideInMobile": {
+      "type": "boolean",
+      "default": false
     }
   }
 }

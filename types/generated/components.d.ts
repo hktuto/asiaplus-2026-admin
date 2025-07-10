@@ -175,6 +175,7 @@ export interface UiMenuItem extends Schema.Component {
     url_HK: Attribute.String;
     url_EN: Attribute.String;
     url_CN: Attribute.String;
+    hideInMobile: Attribute.Boolean & Attribute.DefaultTo<false>;
   };
 }
 
