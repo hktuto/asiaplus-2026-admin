@@ -97,6 +97,7 @@ export interface ProgramsProgram extends Schema.Component {
     registerForm: Attribute.Component<'programs.register-form', true>;
     category: Attribute.Enumeration<['other', 'workshop', 'lecture']> &
       Attribute.DefaultTo<'other'>;
+    feature: Attribute.Media;
   };
 }
 
