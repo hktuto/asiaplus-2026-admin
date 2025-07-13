@@ -98,6 +98,7 @@ export interface ProgramsProgram extends Schema.Component {
     category: Attribute.Enumeration<['other', 'workshop', 'lecture']> &
       Attribute.DefaultTo<'other'>;
     feature: Attribute.Media;
+    ccEmail: Attribute.String;
   };
 }
 
