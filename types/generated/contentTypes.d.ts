@@ -918,6 +918,7 @@ export interface ApiEventEvent extends Schema.CollectionType {
       'manyToMany',
       'api::event.event'
     >;
+    preview_only: Attribute.Boolean;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

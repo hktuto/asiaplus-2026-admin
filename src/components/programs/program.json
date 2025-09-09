@@ -113,6 +113,9 @@
     },
     "ccEmail": {
       "type": "string"
+    },
+    "preview_only": {
+      "type": "boolean"
     }
   }
 }

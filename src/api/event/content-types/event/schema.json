@@ -145,6 +145,9 @@
       "relation": "manyToMany",
       "target": "api::event.event",
       "inversedBy": "realtedEvents"
+    },
+    "preview_only": {
+      "type": "boolean"
     }
   }
 }

@@ -40,6 +40,9 @@
     "show": {
       "type": "boolean",
       "default": false
+    },
+    "preview_only": {
+      "type": "boolean"
     }
   }
 }
