@@ -1,7 +1,7 @@
 module.exports = {
   apps: [
     {
-      name: 'asiaplus-2026-admin',
+      name: 'asiaplus',
       script: "pnpm",
       args: "start",
       env: {
