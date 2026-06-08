@@ -20,7 +20,13 @@ module.exports = [
       },
     },
   },
-  'strapi::cors',
+  {
+    name: "strapi::cors",
+    config: {
+      origin: ["https://asiaplus-2025-client.vercel.app/", "http://localhost:3000", "https://asiaplus.gov.hk"],
+      credentials: false,
+    },
+  },
   'strapi::poweredBy',
   'strapi::query',
   'strapi::body',
