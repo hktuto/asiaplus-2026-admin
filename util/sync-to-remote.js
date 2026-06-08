@@ -20,7 +20,10 @@ const eventMap = {};    // local event documentId → remote event documentId
 
 async function api(baseUrl, endpoint, options = {}) {
   const url = `${baseUrl}${endpoint}`;
-  const headers = { ...options.headers };
+  const headers = {
+    'Content-Type': 'application/json',
+    ...options.headers,
+  };
   if (TARGET_TOKEN && baseUrl === TARGET_API) {
     headers['Authorization'] = `Bearer ${TARGET_TOKEN}`;
   }
@@ -49,7 +52,7 @@ function cleanObject(obj) {
 
   const cleaned = {};
   for (const [key, value] of Object.entries(obj)) {
-    if (['documentId', 'createdAt', 'updatedAt', 'publishedAt', '__component', 'locale'].includes(key)) continue;
+    if (['id', 'documentId', 'createdAt', 'updatedAt', 'publishedAt', '__component', 'locale'].includes(key)) continue;
     cleaned[key] = cleanObject(value);
   }
   return cleaned;
@@ -193,28 +196,16 @@ async function syncMedia() {
 
 async function syncEvents() {
   console.log('\n=== Syncing Events ===');
-  const populate = [
-    'categories',
-    'slide',
-    'slide.image',
-    'slide.thumbnail',
-    'program',
-    'program.dates',
-    'program.registerForm',
-    'program.feature',
-    'infomation',
-    'infomation.dates',
-    'infomation.files_HK',
-    'infomation.files_EN',
-    'infomation.files_CN',
-    'sections',
-    'sections.files',
-    'sections.event',
-    'popup',
-    'events',
-  ];
-  const qs = populate.map(p => `populate[${p}]=true`).join('&');
-  const source = await api(SOURCE_API, `/events?${qs}&pagination[pageSize]=100`);
+  const qs = 'populate[categories]=true' +
+    '&populate[events]=true' +
+    '&populate[realtedEvents]=true' +
+    '&populate[slide]=true' +
+    '&populate[program]=true' +
+    '&populate[infomation]=true' +
+    '&populate[sections]=true' +
+    '&populate[popup]=true' +
+    '&pagination[pageSize]=100';
+  const source = await api(SOURCE_API, `/events?${qs}`);
   const items = source.data || [];
   console.log(`Found ${items.length} events on source`);
 
