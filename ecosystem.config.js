@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'asiaplus-2026-admin',
-      script: './node_modules/@strapi/strapi/bin/strapi.js',
+      script: 'pnpm',
       args: 'start',
       instances: 1,
       autorestart: true,
