@@ -48,6 +48,60 @@ pnpm start
 
 ---
 
+## Deployment (PM2)
+
+The project includes an `ecosystem.config.js` for PM2 process management.
+
+### PM2 Commands
+
+```bash
+# Start with PM2 (production, port 1339)
+pm2 start ecosystem.config.js
+
+# Restart
+pm2 restart asiaplus-2026-admin
+
+# Stop
+pm2 stop asiaplus-2026-admin
+
+# Delete
+pm2 delete asiaplus-2026-admin
+
+# View logs
+pm2 logs asiaplus-2026-admin
+
+# Monitor
+pm2 monit
+```
+
+### Production Setup
+
+```bash
+# 1. Build the admin panel
+pnpm build
+
+# 2. Start with PM2 on port 1339
+pm2 start ecosystem.config.js
+
+# 3. Save PM2 config so it restarts on boot
+pm2 save
+pm2 startup
+```
+
+### Configuration
+
+| Setting | Value |
+|---|---|
+| App name | `asiaplus-2026-admin` |
+| Port | `1339` (set via `PORT` env) |
+| Script | `./node_modules/@strapi/strapi/bin/strapi.js start` |
+| Instances | `1` |
+| Auto-restart | `true` |
+| Max memory | `1G` |
+| Logs | `./logs/pm2-*.log` |
+
+---
+
 ## Content Migration Utility
 
 A reusable script is provided in `util/migrate-content.js` for copying content from an old Strapi site.
@@ -154,6 +208,7 @@ All content now has a persistent `documentId` field in addition to numeric `id`.
 | `config/server.js` | Server host, port, webhooks |
 | `src/index.js` | Application lifecycle hooks |
 | `util/migrate-content.js` | Content migration script |
+| `ecosystem.config.js` | PM2 process manager config (port 1339) |
 
 ---
 

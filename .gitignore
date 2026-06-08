@@ -119,3 +119,7 @@ build
 
 Asia+ 2026 Website_Info to Blueriver/
 .temp_extract/
+
+# PM2 logs
+logs/pm2-*.log
+logs/
