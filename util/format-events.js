@@ -167,8 +167,7 @@ const formattedEvents = rawEvents.map((e, index) => {
         content_CN: sp.infoChi,
         displayTime_HK: sp.date,
         displayTime_EN: sp.date,
-        displayTime_CN: sp.date,
-        order: spIdx
+        displayTime_CN: sp.date
       });
     });
   }
