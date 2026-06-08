@@ -1,288 +1,290 @@
-import type { Schema, Attribute } from '@strapi/strapi';
+import type { Schema, Struct } from '@strapi/strapi';
 
-export interface ProgramsInformation extends Schema.Component {
+export interface ProgramsInformation extends Struct.ComponentSchema {
   collectionName: 'components_programs_information';
   info: {
+    description: '';
     displayName: 'information';
-    description: '';
   };
   attributes: {
-    date_HK: Attribute.String;
-    date_EN: Attribute.String;
-    date_CN: Attribute.String;
-    location_HK: Attribute.RichText;
-    location_EN: Attribute.RichText;
-    location_CN: Attribute.RichText;
-    ticket_HK: Attribute.RichText;
-    ticket_EN: Attribute.RichText;
-    ticket_CN: Attribute.RichText;
-    language_HK: Attribute.String;
-    language_EN: Attribute.String;
-    language_CN: Attribute.String;
-    meet_session_HK: Attribute.String;
-    meet_session_EN: Attribute.String;
-    meet_session_CN: Attribute.String;
-    remark_HK: Attribute.RichText;
-    remark_EN: Attribute.RichText;
-    remark_CN: Attribute.RichText;
-    tittle_HK: Attribute.String;
-    tittle_EN: Attribute.String;
-    tittle_CN: Attribute.String;
-    dates: Attribute.Component<'programs.program-date', true>;
-    sheetId: Attribute.String;
-    registerEmail: Attribute.RichText;
-    formPrefixHK: Attribute.RichText;
-    formPrefixEN: Attribute.RichText;
-    formPrefixCN: Attribute.RichText;
-    formSuffixHK: Attribute.RichText;
-    formSuffixEN: Attribute.RichText;
-    formSuffixCN: Attribute.RichText;
-    sitLimit: Attribute.Integer;
-    registerEmailTitle: Attribute.String;
-    sitRegistered: Attribute.Integer & Attribute.DefaultTo<0>;
-    displayDate_HK: Attribute.String;
-    displayDate_EN: Attribute.String;
-    displayDate_CN: Attribute.String;
-    files_HK: Attribute.RichText;
-    files_EN: Attribute.RichText;
-    files_CN: Attribute.RichText;
-    preview_only: Attribute.Boolean;
+    date_CN: Schema.Attribute.String;
+    date_EN: Schema.Attribute.String;
+    date_HK: Schema.Attribute.String;
+    dates: Schema.Attribute.Component<'programs.program-date', true>;
+    displayDate_CN: Schema.Attribute.String;
+    displayDate_EN: Schema.Attribute.String;
+    displayDate_HK: Schema.Attribute.String;
+    files_CN: Schema.Attribute.RichText;
+    files_EN: Schema.Attribute.RichText;
+    files_HK: Schema.Attribute.RichText;
+    formPrefixCN: Schema.Attribute.RichText;
+    formPrefixEN: Schema.Attribute.RichText;
+    formPrefixHK: Schema.Attribute.RichText;
+    formSuffixCN: Schema.Attribute.RichText;
+    formSuffixEN: Schema.Attribute.RichText;
+    formSuffixHK: Schema.Attribute.RichText;
+    language_CN: Schema.Attribute.String;
+    language_EN: Schema.Attribute.String;
+    language_HK: Schema.Attribute.String;
+    location_CN: Schema.Attribute.RichText;
+    location_EN: Schema.Attribute.RichText;
+    location_HK: Schema.Attribute.RichText;
+    meet_session_CN: Schema.Attribute.String;
+    meet_session_EN: Schema.Attribute.String;
+    meet_session_HK: Schema.Attribute.String;
+    preview_only: Schema.Attribute.Boolean;
+    registerEmail: Schema.Attribute.RichText;
+    registerEmailTitle: Schema.Attribute.String;
+    remark_CN: Schema.Attribute.RichText;
+    remark_EN: Schema.Attribute.RichText;
+    remark_HK: Schema.Attribute.RichText;
+    sheetId: Schema.Attribute.String;
+    sitLimit: Schema.Attribute.Integer;
+    sitRegistered: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    ticket_CN: Schema.Attribute.RichText;
+    ticket_EN: Schema.Attribute.RichText;
+    ticket_HK: Schema.Attribute.RichText;
+    tittle_CN: Schema.Attribute.String;
+    tittle_EN: Schema.Attribute.String;
+    tittle_HK: Schema.Attribute.String;
   };
 }
 
-export interface ProgramsProgramDate extends Schema.Component {
-  collectionName: 'components_programs_program_dates';
-  info: {
-    displayName: 'programDate';
-    description: '';
-  };
-  attributes: {
-    date: Attribute.Date;
-    time: Attribute.Time;
-  };
-}
-
-export interface ProgramsProgram extends Schema.Component {
+export interface ProgramsProgram extends Struct.ComponentSchema {
   collectionName: 'components_programs_programs';
   info: {
+    description: '';
     displayName: 'program';
     icon: 'apps';
-    description: '';
   };
   attributes: {
-    title_HK: Attribute.String;
-    title_EN: Attribute.String;
-    title_CN: Attribute.String;
-    content_HK: Attribute.RichText;
-    content_EN: Attribute.RichText;
-    content_CN: Attribute.RichText;
-    google_sheet_id: Attribute.String;
-    displayTime_HK: Attribute.String;
-    displayTime_EN: Attribute.String;
-    displayTime_CN: Attribute.String;
-    dates: Attribute.Component<'programs.program-date', true>;
-    sheetId: Attribute.String;
-    registerEmail: Attribute.RichText;
-    formPrefixHK: Attribute.RichText;
-    formPrefixEN: Attribute.RichText;
-    formPrefixCN: Attribute.RichText;
-    formSuffixHK: Attribute.RichText;
-    formSuffixCN: Attribute.RichText;
-    formSuffixEN: Attribute.RichText;
-    sitLimit: Attribute.Integer;
-    registerEmailTitle: Attribute.String;
-    sitRegistered: Attribute.Integer & Attribute.DefaultTo<0>;
-    displayDate_HK: Attribute.String;
-    displayDate_EN: Attribute.String;
-    displayDate_CN: Attribute.String;
-    registerForm: Attribute.Component<'programs.register-form', true>;
-    category: Attribute.Enumeration<['other', 'workshop', 'lecture']> &
-      Attribute.DefaultTo<'other'>;
-    feature: Attribute.Media;
-    ccEmail: Attribute.String;
-    preview_only: Attribute.Boolean;
+    category: Schema.Attribute.Enumeration<['other', 'workshop', 'lecture']> &
+      Schema.Attribute.DefaultTo<'other'>;
+    ccEmail: Schema.Attribute.String;
+    content_CN: Schema.Attribute.RichText;
+    content_EN: Schema.Attribute.RichText;
+    content_HK: Schema.Attribute.RichText;
+    dates: Schema.Attribute.Component<'programs.program-date', true>;
+    displayDate_CN: Schema.Attribute.String;
+    displayDate_EN: Schema.Attribute.String;
+    displayDate_HK: Schema.Attribute.String;
+    displayTime_CN: Schema.Attribute.String;
+    displayTime_EN: Schema.Attribute.String;
+    displayTime_HK: Schema.Attribute.String;
+    feature: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    formPrefixCN: Schema.Attribute.RichText;
+    formPrefixEN: Schema.Attribute.RichText;
+    formPrefixHK: Schema.Attribute.RichText;
+    formSuffixCN: Schema.Attribute.RichText;
+    formSuffixEN: Schema.Attribute.RichText;
+    formSuffixHK: Schema.Attribute.RichText;
+    google_sheet_id: Schema.Attribute.String;
+    preview_only: Schema.Attribute.Boolean;
+    registerEmail: Schema.Attribute.RichText;
+    registerEmailTitle: Schema.Attribute.String;
+    registerForm: Schema.Attribute.Component<'programs.register-form', true>;
+    sheetId: Schema.Attribute.String;
+    sitLimit: Schema.Attribute.Integer;
+    sitRegistered: Schema.Attribute.Integer & Schema.Attribute.DefaultTo<0>;
+    title_CN: Schema.Attribute.String;
+    title_EN: Schema.Attribute.String;
+    title_HK: Schema.Attribute.String;
   };
 }
 
-export interface ProgramsRegisterForm extends Schema.Component {
+export interface ProgramsProgramDate extends Struct.ComponentSchema {
+  collectionName: 'components_programs_program_dates';
+  info: {
+    description: '';
+    displayName: 'programDate';
+  };
+  attributes: {
+    date: Schema.Attribute.Date;
+    time: Schema.Attribute.Time;
+  };
+}
+
+export interface ProgramsRegisterForm extends Struct.ComponentSchema {
   collectionName: 'components_programs_register_forms';
   info: {
+    description: '';
     displayName: 'registerForm';
     icon: 'attachment';
-    description: '';
   };
   attributes: {
-    sheetId: Attribute.String;
-    registerEmail: Attribute.RichText;
-    formPrefixHK: Attribute.RichText;
-    formPrefixEN: Attribute.RichText;
-    formPrefixCN: Attribute.RichText;
-    formSuffixHK: Attribute.RichText;
-    formSuffixEN: Attribute.RichText;
-    formSuffixCN: Attribute.RichText;
-    sitLimit: Attribute.Integer;
-    sitRegistered: Attribute.Integer;
-    submitTextHK: Attribute.String;
-    submitTextEN: Attribute.String;
-    submitTextCN: Attribute.String;
-    registerEmailTitle: Attribute.String;
+    formPrefixCN: Schema.Attribute.RichText;
+    formPrefixEN: Schema.Attribute.RichText;
+    formPrefixHK: Schema.Attribute.RichText;
+    formSuffixCN: Schema.Attribute.RichText;
+    formSuffixEN: Schema.Attribute.RichText;
+    formSuffixHK: Schema.Attribute.RichText;
+    registerEmail: Schema.Attribute.RichText;
+    registerEmailTitle: Schema.Attribute.String;
+    sheetId: Schema.Attribute.String;
+    sitLimit: Schema.Attribute.Integer;
+    sitRegistered: Schema.Attribute.Integer;
+    submitTextCN: Schema.Attribute.String;
+    submitTextEN: Schema.Attribute.String;
+    submitTextHK: Schema.Attribute.String;
   };
 }
 
-export interface UiDownload extends Schema.Component {
+export interface UiDownload extends Struct.ComponentSchema {
   collectionName: 'components_ui_downloads';
   info: {
-    displayName: 'download';
     description: '';
+    displayName: 'download';
   };
   attributes: {
-    title_HK: Attribute.String;
-    title_EN: Attribute.String;
-    title_CN: Attribute.String;
-    file: Attribute.Media;
-    thumbnail: Attribute.Media;
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    thumbnail: Schema.Attribute.Media<'images'>;
+    title_CN: Schema.Attribute.String;
+    title_EN: Schema.Attribute.String;
+    title_HK: Schema.Attribute.String;
   };
 }
 
-export interface UiLogos extends Schema.Component {
+export interface UiLogos extends Struct.ComponentSchema {
   collectionName: 'components_ui_logos';
   info: {
-    displayName: 'logos';
     description: '';
+    displayName: 'logos';
   };
   attributes: {
-    label: Attribute.String;
-    img: Attribute.Media;
-    url_HK: Attribute.String;
-    url_EN: Attribute.String;
-    url_CN: Attribute.String;
-    img_HK: Attribute.Media;
-    img_CN: Attribute.Media;
+    img: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img_CN: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    img_HK: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    label: Schema.Attribute.String;
+    url_CN: Schema.Attribute.String;
+    url_EN: Schema.Attribute.String;
+    url_HK: Schema.Attribute.String;
   };
 }
 
-export interface UiMenuItem extends Schema.Component {
+export interface UiMenuItem extends Struct.ComponentSchema {
   collectionName: 'components_ui_menu_items';
   info: {
+    description: '';
     displayName: 'menu_item';
     icon: 'bulletList';
-    description: '';
   };
   attributes: {
-    label_EN: Attribute.String;
-    blank: Attribute.Boolean & Attribute.DefaultTo<false>;
-    show: Attribute.Boolean & Attribute.DefaultTo<true>;
-    label_HK: Attribute.String;
-    subMenu: Attribute.Component<'ui.sub-menu', true>;
-    label_CN: Attribute.String;
-    show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
-    url_HK: Attribute.String;
-    url_EN: Attribute.String;
-    url_CN: Attribute.String;
-    hideInMobile: Attribute.Boolean & Attribute.DefaultTo<false>;
+    blank: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    hideInMobile: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    label_CN: Schema.Attribute.String;
+    label_EN: Schema.Attribute.String;
+    label_HK: Schema.Attribute.String;
+    show: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    show_in_desktop: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    subMenu: Schema.Attribute.Component<'ui.sub-menu', true>;
+    url_CN: Schema.Attribute.String;
+    url_EN: Schema.Attribute.String;
+    url_HK: Schema.Attribute.String;
   };
 }
 
-export interface UiPopup extends Schema.Component {
+export interface UiPopup extends Struct.ComponentSchema {
   collectionName: 'components_ui_popups';
   info: {
+    description: '';
     displayName: 'popup';
     icon: 'archive';
-    description: '';
   };
   attributes: {
-    enable: Attribute.Boolean & Attribute.DefaultTo<true>;
-    content_EN: Attribute.RichText;
-    once: Attribute.Boolean & Attribute.DefaultTo<false>;
-    content_HK: Attribute.RichText;
-    content_CN: Attribute.RichText;
-    alway_show: Attribute.Boolean & Attribute.DefaultTo<false>;
+    alway_show: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    content_CN: Schema.Attribute.RichText;
+    content_EN: Schema.Attribute.RichText;
+    content_HK: Schema.Attribute.RichText;
+    enable: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    once: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
   };
 }
 
-export interface UiSectoin extends Schema.Component {
+export interface UiSectoin extends Struct.ComponentSchema {
   collectionName: 'components_ui_sectoins';
   info: {
-    displayName: 'sectoin';
     description: '';
+    displayName: 'sectoin';
   };
   attributes: {
-    title_HK: Attribute.String;
-    title_EN: Attribute.String;
-    title_CN: Attribute.String;
-    files: Attribute.Component<'ui.download', true>;
-    content_HK: Attribute.RichText;
-    content_EN: Attribute.RichText;
-    content_CN: Attribute.RichText;
-    event: Attribute.Relation<'ui.sectoin', 'oneToOne', 'api::event.event'>;
-    redirect_url: Attribute.String;
-    show: Attribute.Boolean & Attribute.DefaultTo<false>;
-    preview_only: Attribute.Boolean;
+    content_CN: Schema.Attribute.RichText;
+    content_EN: Schema.Attribute.RichText;
+    content_HK: Schema.Attribute.RichText;
+    event: Schema.Attribute.Relation<'oneToOne', 'api::event.event'>;
+    files: Schema.Attribute.Component<'ui.download', true>;
+    preview_only: Schema.Attribute.Boolean;
+    redirect_url: Schema.Attribute.String;
+    show: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    title_CN: Schema.Attribute.String;
+    title_EN: Schema.Attribute.String;
+    title_HK: Schema.Attribute.String;
   };
 }
 
-export interface UiSlide extends Schema.Component {
+export interface UiSlide extends Struct.ComponentSchema {
   collectionName: 'components_ui_slides';
   info: {
+    description: '';
     displayName: 'Slide';
     icon: 'apps';
-    description: '';
   };
   attributes: {
-    video_EN: Attribute.String;
-    image: Attribute.Media;
-    title_CN: Attribute.String;
-    title_EN: Attribute.Text;
-    title_HK: Attribute.String;
-    video_HK: Attribute.String;
-    video_ZH: Attribute.String;
-    thumbnail: Attribute.Media;
-    link_HK: Attribute.String;
-    link_EN: Attribute.String;
-    link_CN: Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    link_CN: Schema.Attribute.String;
+    link_EN: Schema.Attribute.String;
+    link_HK: Schema.Attribute.String;
+    thumbnail: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title_CN: Schema.Attribute.String;
+    title_EN: Schema.Attribute.Text;
+    title_HK: Schema.Attribute.String;
+    video_EN: Schema.Attribute.String;
+    video_HK: Schema.Attribute.String;
+    video_ZH: Schema.Attribute.String;
   };
 }
 
-export interface UiSocial extends Schema.Component {
+export interface UiSocial extends Struct.ComponentSchema {
   collectionName: 'components_ui_socials';
   info: {
     displayName: 'social';
     icon: 'alien';
   };
   attributes: {
-    label: Attribute.String;
-    icon: Attribute.Media & Attribute.Required;
-    link: Attribute.String & Attribute.Required;
+    icon: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    label: Schema.Attribute.String;
+    link: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
-export interface UiSubMenu extends Schema.Component {
+export interface UiSubMenu extends Struct.ComponentSchema {
   collectionName: 'components_ui_sub_menus';
   info: {
+    description: '';
     displayName: 'subMenu';
     icon: 'bulletList';
-    description: '';
   };
   attributes: {
-    label_EN: Attribute.String;
-    label_HK: Attribute.String;
-    blank: Attribute.Boolean;
-    show: Attribute.Boolean;
-    url: Attribute.String;
-    label_CN: Attribute.String;
-    show_in_desktop: Attribute.Boolean & Attribute.DefaultTo<true>;
-    url_HK: Attribute.String;
-    url_EN: Attribute.String;
-    url_CN: Attribute.String;
+    blank: Schema.Attribute.Boolean;
+    label_CN: Schema.Attribute.String;
+    label_EN: Schema.Attribute.String;
+    label_HK: Schema.Attribute.String;
+    show: Schema.Attribute.Boolean;
+    show_in_desktop: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
+    url: Schema.Attribute.String;
+    url_CN: Schema.Attribute.String;
+    url_EN: Schema.Attribute.String;
+    url_HK: Schema.Attribute.String;
   };
 }
 
-declare module '@strapi/types' {
-  export module Shared {
-    export interface Components {
+declare module '@strapi/strapi' {
+  export module Public {
+    export interface ComponentSchemas {
       'programs.information': ProgramsInformation;
-      'programs.program-date': ProgramsProgramDate;
       'programs.program': ProgramsProgram;
+      'programs.program-date': ProgramsProgramDate;
       'programs.register-form': ProgramsRegisterForm;
       'ui.download': UiDownload;
       'ui.logos': UiLogos;
