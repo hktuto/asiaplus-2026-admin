@@ -112,3 +112,10 @@ exports
 dist
 build
 .strapi-updater.json
+
+############################
+# Extracted data (source files)
+############################
+
+Asia+ 2026 Website_Info to Blueriver/
+.temp_extract/
