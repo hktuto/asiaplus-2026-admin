@@ -10,18 +10,17 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "4.26.1",
-    "@strapi/plugin-color-picker": "^4.22.0",
-    "@strapi/plugin-i18n": "4.26.1",
-    "@strapi/plugin-users-permissions": "4.26.1",
-    "@strapi/strapi": "4.26.1",
-    "better-sqlite3": "11.3.0",
+    "@strapi/plugin-cloud": "5.47.1",
+    "@strapi/plugin-color-picker": "5.47.1",
+    "@strapi/plugin-users-permissions": "5.47.1",
+    "@strapi/strapi": "5.47.1",
+    "better-sqlite3": "12.8.0",
     "pg": "^8.11.5",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "5.3.4",
-    "strapi-plugin-multi-select": "^1.2.3",
-    "styled-components": "5.3.3"
+    "react-router-dom": "^6.0.0",
+    "strapi-plugin-multi-select": "^2.1.1",
+    "styled-components": "^6.0.0"
   },
   "author": {
     "name": "A Strapi developer"
@@ -30,7 +29,7 @@
     "uuid": "f7018e59-f502-470a-a0ca-e4b58380b254"
   },
   "engines": {
-    "node": ">=18.0.0 <=20.x.x"
+    "node": ">=18.0.0 <=22.x.x"
   },
   "license": "MIT"
 }
