@@ -1,13 +1,13 @@
 /**
  * Content Migration Script
- * Fetches content from a source Strapi API and creates it on a target Strapi API.
+ * Fetches content from a source Strapi API and creates/updates it on a target Strapi API.
  * Requires public create permissions on the target content types.
  *
  * Usage:
- *   OLD_API=https://old-site.com/api NEW_API=http://localhost:1337/api node util/migrate-content.js
+ *   OLD_API=http://localhost:1337/api NEW_API=http://remote:1339/api node util/migrate-content.js
  */
 
-const OLD_API = process.env.OLD_API || 'https://asiaplus-2025-up2ld.ondigitalocean.app/api';
+const OLD_API = process.env.OLD_API || 'http://localhost:1337/api';
 const NEW_API = process.env.NEW_API || 'http://localhost:1337/api';
 
 async function fetchOld(endpoint) {
@@ -44,18 +44,53 @@ async function putNew(endpoint, body) {
   return JSON.parse(text);
 }
 
+function deepClean(obj) {
+  if (obj === null || obj === undefined) return obj;
+  if (Array.isArray(obj)) return obj.map(deepClean);
+  if (typeof obj !== 'object') return obj;
+
+  // If this looks like a media file, keep only minimal info
+  if (obj.url && obj.id !== undefined) {
+    return { id: obj.id };
+  }
+
+  const cleaned = {};
+  for (const [key, value] of Object.entries(obj)) {
+    if (['id', 'documentId', 'createdAt', 'updatedAt', 'publishedAt', '__component', 'locale'].includes(key)) continue;
+    cleaned[key] = deepClean(value);
+  }
+  return cleaned;
+}
+
 function extractAttrs(data) {
-  const { id, createdAt, updatedAt, publishedAt, ...attrs } = data.attributes || data;
-  return attrs;
+  // Handle both v4 (data.attributes) and v5 (flat) formats
+  const raw = data.attributes || data;
+  return deepClean(raw);
 }
 
 async function migrateCategories() {
   console.log('Migrating categories...');
-  const old = await fetchOld('/categories');
-  for (const item of old.data) {
+  const old = await fetchOld('/categories?pagination[pageSize]=100');
+  const items = old.data || [];
+
+  // Check existing on target
+  const targetRes = await fetch(`${NEW_API}/categories?pagination[pageSize]=100`);
+  const targetData = targetRes.ok ? await targetRes.json() : { data: [] };
+  const targetItems = targetData.data || [];
+  const targetNames = new Set(targetItems.map(t => t.name || t.name_EN));
+
+  for (const item of items) {
     const attrs = extractAttrs(item);
-    await postNew('/categories', { data: attrs });
-    console.log('  Created category:', attrs.name_EN || attrs.name);
+    if (targetNames.has(attrs.name) || targetNames.has(attrs.name_EN)) {
+      console.log('  → Skipped (already exists):', attrs.name_EN || attrs.name);
+      continue;
+    }
+    try {
+      await postNew('/categories', { data: attrs });
+      console.log('  ✓ Created:', attrs.name_EN || attrs.name);
+    } catch (err) {
+      console.log('  ✗ Failed:', attrs.name_EN || attrs.name, err.message);
+    }
   }
 }
 
@@ -64,7 +99,7 @@ async function migrateFooter() {
   const old = await fetchOld('/footer?populate=*');
   const attrs = extractAttrs(old.data);
   await putNew('/footer', { data: attrs });
-  console.log('  Footer created/updated');
+  console.log('  ✓ Footer updated');
 }
 
 async function migrateHome() {
@@ -72,7 +107,7 @@ async function migrateHome() {
   const old = await fetchOld('/home?populate=*');
   const attrs = extractAttrs(old.data);
   await putNew('/home', { data: attrs });
-  console.log('  Home created/updated');
+  console.log('  ✓ Home updated');
 }
 
 async function migrateMenu() {
@@ -80,7 +115,7 @@ async function migrateMenu() {
   const old = await fetchOld('/menu?populate=*');
   const attrs = extractAttrs(old.data);
   await putNew('/menu', { data: attrs });
-  console.log('  Menu created/updated');
+  console.log('  ✓ Menu updated');
 }
 
 async function main() {

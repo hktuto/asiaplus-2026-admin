@@ -23,7 +23,7 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      origin: ["https://asiaplus-2025-client.vercel.app/", "http://localhost:3000", "https://asiaplus.gov.hk"],
+      origin: ["https://asiaplus-2025-client.vercel.app/", "http://47.242.134.247:3000/", "http://localhost:3000", "https://asiaplus.gov.hk"],
       credentials: false,
     },
   },

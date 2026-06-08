@@ -2,10 +2,11 @@
  * Import events from data/events-formatted.json into Strapi v5
  * 
  * Usage:
- *   node util/import-events.js
+ *   STRAPI_API=http://localhost:1337/api node util/import-events.js
+ *   STRAPI_API=http://remote:1339/api node util/import-events.js
  *   
  * Requires:
- *   - Strapi server running (default: http://localhost:1337)
+ *   - Strapi server running
  *   - Public permissions for event.create, event.find, category.find
  *   - data/events-formatted.json exists
  */
@@ -16,16 +17,8 @@ const path = require('path');
 const API_URL = process.env.STRAPI_API || 'http://localhost:1337/api';
 const EVENTS_FILE = path.join(__dirname, '..', 'data', 'events-formatted.json');
 
-// Category name to documentId mapping
-// These are the document_ids from the categories table
-const CATEGORY_MAP = {
-  'music': 'taqa06abigva7p5vthm6lag6',
-  'dance': 'gpkqpiyrhjjo15y2tytuphzz',
-  'theatre': 'tjf95y6ei2p4rqx4hykx9x2z',
-  'multi-arts': 'uy34f7xi41ko2x7gqwliyfab',
-  'exhibition': 'mxn6xtobpkdxbpzogehrudoy',
-  'other': 'z8fxczbfwuyk9mqdrrhdbnx5'
-};
+// Category name → target documentId (populated dynamically)
+let CATEGORY_MAP = {};
 
 async function api(endpoint, options = {}) {
   const url = `${API_URL}${endpoint}`;
@@ -43,6 +36,19 @@ async function api(endpoint, options = {}) {
   }
   
   return res.json();
+}
+
+async function loadCategoryMap() {
+  console.log('Loading categories from target API...');
+  const data = await api('/categories?pagination[pageSize]=100');
+  const categories = data.data || [];
+  const map = {};
+  for (const cat of categories) {
+    const key = cat.name || cat.name_EN || cat.slug;
+    if (key) map[key.toLowerCase()] = cat.documentId;
+  }
+  CATEGORY_MAP = map;
+  console.log(`Loaded ${Object.keys(map).length} categories\n`);
 }
 
 async function findExistingEvent(slug) {
@@ -91,14 +97,16 @@ function buildEventPayload(event) {
     }
   }
 
-  // Categories - connect by documentId
+  // Categories - connect by documentId (looked up dynamically from target)
   if (event.categories && event.categories.length > 0) {
-    payload.categories = {
-      connect: event.categories
-        .map(c => CATEGORY_MAP[c])
-        .filter(Boolean)
-        .map(documentId => ({ documentId }))
-    };
+    const remoteCats = [];
+    for (const c of event.categories) {
+      const docId = CATEGORY_MAP[c.toLowerCase()];
+      if (docId) remoteCats.push({ documentId: docId });
+    }
+    if (remoteCats.length) {
+      payload.categories = { connect: remoteCats };
+    }
   }
 
   // Information components
@@ -162,6 +170,9 @@ async function main() {
     console.error('Make sure Strapi is running and public permissions are enabled.');
     process.exit(1);
   }
+
+  // Load category map from target API
+  await loadCategoryMap();
 
   let created = 0;
   let updated = 0;
