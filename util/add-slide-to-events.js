@@ -7,7 +7,6 @@
 const API_URL = process.env.STRAPI_API || 'http://localhost:1337/api';
 
 const IMAGE_ID = 1; // s1-2026.jpeg
-const IMAGE_DOCUMENT_ID = 't1eecxlvv7uc063wm3obpfw7';
 
 async function api(endpoint, options = {}) {
   const url = `${API_URL}${endpoint}`;
@@ -44,15 +43,14 @@ async function main() {
     process.stdout.write(`Adding slide to ${slug}... `);
     
     try {
+      // For media in components, pass as array of IDs directly
       await api(`/events/${documentId}`, {
         method: 'PUT',
         body: JSON.stringify({
           data: {
             slide: [
               {
-                image: {
-                  connect: [{ id: IMAGE_ID }]
-                }
+                image: [IMAGE_ID]
               }
             ]
           }
