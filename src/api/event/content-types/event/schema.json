@@ -54,13 +54,13 @@
     },
     "program": {
       "type": "component",
-      "repeatable": true,
-      "component": "programs.program"
+      "component": "programs.program",
+      "repeatable": true
     },
     "infomation": {
       "type": "component",
-      "repeatable": true,
-      "component": "programs.information"
+      "component": "programs.information",
+      "repeatable": true
     },
     "program_EN": {
       "type": "richtext"
@@ -86,8 +86,8 @@
     },
     "slide": {
       "type": "component",
-      "repeatable": true,
-      "component": "ui.slide"
+      "component": "ui.slide",
+      "repeatable": true
     },
     "displayTime_HK": {
       "type": "string"
@@ -108,8 +108,8 @@
     },
     "sections": {
       "type": "component",
-      "repeatable": true,
-      "component": "ui.sectoin"
+      "component": "ui.sectoin",
+      "repeatable": true
     },
     "tag_HK": {
       "type": "string"
@@ -131,8 +131,8 @@
     },
     "popup": {
       "type": "component",
-      "repeatable": false,
-      "component": "ui.popup"
+      "component": "ui.popup",
+      "repeatable": false
     },
     "realtedEvents": {
       "type": "relation",
@@ -148,6 +148,9 @@
     },
     "preview_only": {
       "type": "boolean"
+    },
+    "ticketUrl": {
+      "type": "string"
     }
   }
 }

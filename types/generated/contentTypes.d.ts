@@ -558,6 +558,7 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     tag_CN: Schema.Attribute.String;
     tag_EN: Schema.Attribute.String;
     tag_HK: Schema.Attribute.String;
+    ticketUrl: Schema.Attribute.String;
     title_CN: Schema.Attribute.String;
     title_EN: Schema.Attribute.String;
     title_HK: Schema.Attribute.String;
