@@ -260,6 +260,16 @@ export interface UiSocial extends Struct.ComponentSchema {
   };
 }
 
+export interface UiSocialSlider extends Struct.ComponentSchema {
+  collectionName: 'components_ui_social_sliders';
+  info: {
+    displayName: 'socialSlider';
+  };
+  attributes: {
+    script: Schema.Attribute.Text;
+  };
+}
+
 export interface UiSubMenu extends Struct.ComponentSchema {
   collectionName: 'components_ui_sub_menus';
   info: {
@@ -296,6 +306,7 @@ declare module '@strapi/strapi' {
       'ui.sectoin': UiSectoin;
       'ui.slide': UiSlide;
       'ui.social': UiSocial;
+      'ui.social-slider': UiSocialSlider;
       'ui.sub-menu': UiSubMenu;
     }
   }

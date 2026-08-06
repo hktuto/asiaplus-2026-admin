@@ -783,6 +783,34 @@ export interface ApiSocialMediaSocialMedia extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiSocialSlideSocialSlide extends Struct.SingleTypeSchema {
+  collectionName: 'social_slides';
+  info: {
+    displayName: 'social slide';
+    pluralName: 'social-slides';
+    singularName: 'social-slide';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::social-slide.social-slide'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    socialSlider: Schema.Attribute.Component<'ui.social-slider', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1304,6 +1332,7 @@ declare module '@strapi/strapi' {
       'api::page.page': ApiPagePage;
       'api::popup.popup': ApiPopupPopup;
       'api::social-media.social-media': ApiSocialMediaSocialMedia;
+      'api::social-slide.social-slide': ApiSocialSlideSocialSlide;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

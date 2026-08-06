@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "social_slides",
+  "info": {
+    "singularName": "social-slide",
+    "pluralName": "social-slides",
+    "displayName": "social slide"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "socialSlider": {
+      "type": "component",
+      "component": "ui.social-slider",
+      "repeatable": true
+    }
+  }
+}

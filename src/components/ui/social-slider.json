@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_ui_social_sliders",
+  "info": {
+    "displayName": "socialSlider"
+  },
+  "options": {},
+  "attributes": {
+    "script": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
