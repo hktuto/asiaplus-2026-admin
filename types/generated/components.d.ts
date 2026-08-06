@@ -11,6 +11,9 @@ export interface ProgramsInformation extends Struct.ComponentSchema {
     date_EN: Schema.Attribute.String;
     date_HK: Schema.Attribute.String;
     dates: Schema.Attribute.Component<'programs.program-date', true>;
+    description_CN: Schema.Attribute.RichText;
+    description_EN: Schema.Attribute.RichText;
+    description_HK: Schema.Attribute.RichText;
     displayDate_CN: Schema.Attribute.String;
     displayDate_EN: Schema.Attribute.String;
     displayDate_HK: Schema.Attribute.String;

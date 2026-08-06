@@ -71,8 +71,8 @@
     },
     "dates": {
       "type": "component",
-      "repeatable": true,
-      "component": "programs.program-date"
+      "component": "programs.program-date",
+      "repeatable": true
     },
     "sheetId": {
       "type": "string"
@@ -128,6 +128,15 @@
     },
     "preview_only": {
       "type": "boolean"
+    },
+    "description_HK": {
+      "type": "richtext"
+    },
+    "description_EN": {
+      "type": "richtext"
+    },
+    "description_CN": {
+      "type": "richtext"
     }
   }
 }
