@@ -10,6 +10,7 @@
     "strapi": "strapi"
   },
   "dependencies": {
+    "@strapi-community/plugin-rest-cache": "^5.1.0",
     "@strapi/plugin-cloud": "5.47.1",
     "@strapi/plugin-color-picker": "5.47.1",
     "@strapi/plugin-users-permissions": "5.47.1",
